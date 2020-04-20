@@ -12,6 +12,9 @@ Toute contribution est la bienvenue.
 
 Pour les changements majeurs, veuillez d'abord ouvrir une *issue* pour discuter de ce que vous aimeriez changer.
 
+## Charte Code de Conduite Contributeurs
+[Charte](code_of_conduct.md)
+
 ## Auteurs et remerciements
 Créé avec amour par IronKyle38, codé en JavaScript avec Node.js sur Visual Studio Code.
 
@@ -28,4 +31,4 @@ All trademarks referenced herein are the properties of their respective owners.
 ©2020 The Walt Disney Company. All rights reserved. 
 
 ## Licence
-[Licence](https://github.com/IronKyle38/Disney-Plus_Discord-Bot/blob/master/LICENSE)
+[Licence](LICENSE)
