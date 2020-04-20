@@ -61,7 +61,7 @@ projet.
 
 Les cas de comportements abusifs, harcelants ou tout autre comportement
 inacceptable peuvent être signalés en contactant l'équipe du projet via Twitter
-[@IronKyle38](twitter.com/IronKyle38). Toutes les plaintes seront examinées et étudiées
+[@IronKyle38](www.twitter.com/IronKyle38). Toutes les plaintes seront examinées et étudiées
 et se traduiront par une réponse appropriée aux
 circonstances. L'équipe du projet s'engage à garder confidentielles les
 informations de la personne qui remonte un incident. Plus de détails sur
