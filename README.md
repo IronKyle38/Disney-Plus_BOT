@@ -18,7 +18,9 @@ Pour les changements majeurs, veuillez d'abord ouvrir une *issue* pour discuter 
 ## Auteurs et remerciements
 Créé avec amour par IronKyle38, codé en JavaScript avec Node.js sur Visual Studio Code.
 
-Sources des données : Chronique Disney et IMDb
+Sources des données Chronique Disney et TMDb
+
+Discord+ utilise l'API TMDb mais n'est ni approuvé ni certifié par TMDb.
 
 Catalogue Disney+ sur [Chronique Disney](https://www.chroniquedisney.fr/programme/catalogue-disneyplus.php)
 

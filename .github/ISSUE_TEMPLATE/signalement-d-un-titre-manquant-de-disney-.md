@@ -8,4 +8,4 @@ assignees: ''
 
 ---
 
-**Ajoutez ici le lien IMDb du titre concerné :**
+**Ajoutez ici le lien TMDb du titre concerné :**
