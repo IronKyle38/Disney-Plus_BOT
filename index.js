@@ -66,28 +66,16 @@ client.on("message", function (message) {
                             var data_movie = body_movie.toString();
                             var data_parse_movie = JSON.parse(data_movie);
 
+                            var note_movie = ""
                             if (data_parse_movie.results[TMDB_movie_random].vote_average < 0.5) {
                                 note_movie = "Note indisponible"
-                            } else if (data_parse_movie.results[TMDB_movie_random].vote_average < 1.5) {
-                                note_movie = "❤️🤍🤍🤍🤍🤍🤍🤍🤍🤍"
-                            } else if (data_parse_movie.results[TMDB_movie_random].vote_average < 2.5) {
-                                note_movie = "❤️❤️🤍🤍🤍🤍🤍🤍🤍🤍"
-                            } else if (data_parse_movie.results[TMDB_movie_random].vote_average < 3.5) {
-                                note_movie = "❤️❤️❤️🤍🤍🤍🤍🤍🤍🤍"
-                            } else if (data_parse_movie.results[TMDB_movie_random].vote_average < 4.5) {
-                                note_movie = "❤️❤️❤️❤️🤍🤍🤍🤍🤍🤍"
-                            } else if (data_parse_movie.results[TMDB_movie_random].vote_average < 5.5) {
-                                note_movie = "❤️❤️❤️❤️❤️🤍🤍🤍🤍🤍"
-                            } else if (data_parse_movie.results[TMDB_movie_random].vote_average < 6.5) {
-                                note_movie = "❤️❤️❤️❤️❤️❤️🤍🤍🤍🤍"
-                            } else if (data_parse_movie.results[TMDB_movie_random].vote_average < 7.5) {
-                                note_movie = "❤️❤️❤️❤️❤️❤️❤️🤍🤍🤍"
-                            } else if (data_parse_movie.results[TMDB_movie_random].vote_average < 8.5) {
-                                note_movie = "❤️❤️❤️❤️❤️❤️❤️❤️🤍🤍"
-                            } else if (data_parse_movie.results[TMDB_movie_random].vote_average < 9.5) {
-                                note_movie = "❤️❤️❤️❤️❤️❤️❤️❤️❤️🤍"
                             } else {
-                                note_movie = "❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️"
+                                for (let i = 0; i < Math.round(data_parse_movie.results[TMDB_movie_random].vote_average); i++) {
+                                    note_movie = note_movie + "❤️"
+                                }
+                                for (let i = 0; i < (10-Math.round(data_parse_movie.results[TMDB_movie_random].vote_average)); i++) {
+                                    note_movie = note_movie + "🤍"
+                                }
                             }
 
                             var genres_movie = ""
@@ -174,28 +162,16 @@ client.on("message", function (message) {
                             var data_TV = body_TV.toString();
                             var data_parse_TV = JSON.parse(data_TV);
 
+                            var note_TV = ""
                             if (data_parse_TV.results[TMDB_TV_random].vote_average < 0.5) {
                                 note_TV = "Note indisponible"
-                            } else if (data_parse_TV.results[TMDB_TV_random].vote_average < 1.5) {
-                                note_TV = "❤️🤍🤍🤍🤍🤍🤍🤍🤍🤍"
-                            } else if (data_parse_TV.results[TMDB_TV_random].vote_average < 2.5) {
-                                note_TV = "❤️❤️🤍🤍🤍🤍🤍🤍🤍🤍"
-                            } else if (data_parse_TV.results[TMDB_TV_random].vote_average < 3.5) {
-                                note_TV = "❤️❤️❤️🤍🤍🤍🤍🤍🤍🤍"
-                            } else if (data_parse_TV.results[TMDB_TV_random].vote_average < 4.5) {
-                                note_TV = "❤️❤️❤️❤️🤍🤍🤍🤍🤍🤍"
-                            } else if (data_parse_TV.results[TMDB_TV_random].vote_average < 5.5) {
-                                note_TV = "❤️❤️❤️❤️❤️🤍🤍🤍🤍🤍"
-                            } else if (data_parse_TV.results[TMDB_TV_random].vote_average < 6.5) {
-                                note_TV = "❤️❤️❤️❤️❤️❤️🤍🤍🤍🤍"
-                            } else if (data_parse_TV.results[TMDB_TV_random].vote_average < 7.5) {
-                                note_TV = "❤️❤️❤️❤️❤️❤️❤️🤍🤍🤍"
-                            } else if (data_parse_TV.results[TMDB_TV_random].vote_average < 8.5) {
-                                note_TV = "❤️❤️❤️❤️❤️❤️❤️❤️🤍🤍"
-                            } else if (data_parse_TV.results[TMDB_TV_random].vote_average < 9.5) {
-                                note_TV = "❤️❤️❤️❤️❤️❤️❤️❤️❤️🤍"
                             } else {
-                                note_TV = "❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️"
+                                for (let i = 0; i < Math.round(data_parse_TV.results[TMDB_TV_random].vote_average); i++) {
+                                    note_TV = note_TV + "❤️"
+                                }
+                                for (let i = 0; i < (10-Math.round(data_parse_TV.results[TMDB_TV_random].vote_average)); i++) {
+                                    note_TV = note_TV + "🤍"
+                                }
                             }
     
                             var genres_TV = ""
@@ -282,28 +258,16 @@ client.on("message", function (message) {
                             var data_short = body_short.toString();
                             var data_parse_short = JSON.parse(data_short);
 
+                            var note_short = ""
                             if (data_parse_short.results[TMDB_short_random].vote_average < 0.5) {
                                 note_short = "Note indisponible"
-                            } else if (data_parse_short.results[TMDB_short_random].vote_average < 1.5) {
-                                note_short = "❤️🤍🤍🤍🤍🤍🤍🤍🤍🤍"
-                            } else if (data_parse_short.results[TMDB_short_random].vote_average < 2.5) {
-                                note_short = "❤️❤️🤍🤍🤍🤍🤍🤍🤍🤍"
-                            } else if (data_parse_short.results[TMDB_short_random].vote_average < 3.5) {
-                                note_short = "❤️❤️❤️🤍🤍🤍🤍🤍🤍🤍"
-                            } else if (data_parse_short.results[TMDB_short_random].vote_average < 4.5) {
-                                note_short = "❤️❤️❤️❤️🤍🤍🤍🤍🤍🤍"
-                            } else if (data_parse_short.results[TMDB_short_random].vote_average < 5.5) {
-                                note_short = "❤️❤️❤️❤️❤️🤍🤍🤍🤍🤍"
-                            } else if (data_parse_short.results[TMDB_short_random].vote_average < 6.5) {
-                                note_short = "❤️❤️❤️❤️❤️❤️🤍🤍🤍🤍"
-                            } else if (data_parse_short.results[TMDB_short_random].vote_average < 7.5) {
-                                note_short = "❤️❤️❤️❤️❤️❤️❤️🤍🤍🤍"
-                            } else if (data_parse_short.results[TMDB_short_random].vote_average < 8.5) {
-                                note_short = "❤️❤️❤️❤️❤️❤️❤️❤️🤍🤍"
-                            } else if (data_parse_short.results[TMDB_short_random].vote_average < 9.5) {
-                                note_short = "❤️❤️❤️❤️❤️❤️❤️❤️❤️🤍"
                             } else {
-                                note_short = "❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️"
+                                for (let i = 0; i < Math.round(data_parse_short.results[TMDB_short_random].vote_average); i++) {
+                                    note_short = note_short + "❤️"
+                                }
+                                for (let i = 0; i < (10-Math.round(data_parse_short.results[TMDB_short_random].vote_average)); i++) {
+                                    note_short = note_short + "🤍"
+                                }
                             }
 
                             var genres_short = ""
