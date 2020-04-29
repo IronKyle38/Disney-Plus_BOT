@@ -12,13 +12,15 @@ module.exports = {
                 "\nTu trouveras ci-dessous les différentes commandes que tu peux utiliser."
             )
             .addFields(
-                { name: '`!info`', value: "Permet d'afficher ce message. 👀" },
-                { name: '`!random film`', value: "Permet de découvrir un **film** au hasard." },
-                { name: '`!random serie`', value: "Permet de découvrir une **série** au hasard." },
-                { name: '`!random short`', value: "Permet de découvrir un **court-métrage** au hasard." },
-                { name: '`!total`', value: "Permet de connaitre le nombre total de titres disponibles sur Disney+. 🎞️" },
-                { name: '`!bug`', value: "Permet de signaler un bug, un titre absent de Disney+ ou envoyer un commentaire (envoie via MP). 📝" },
-                { name: '`!credits`', value: "Permet de découvrir qui m'a donné la vie. ❤️" },
+                { name: "__• Pour plus d'informations :__", value: "`!info`, permet d'afficher ce message. 👀" },
+                { name: "__• Pour jouer avec le hasard :__", value:
+                    "`!random film`, permet de découvrir un **film** au hasard."+
+                    "\n`!random serie`, permet de découvrir une **série** au hasard."+
+                    "\n`!random short`, permet de découvrir un **court-métrage** au hasard."},
+                { name: "__• Pour prendre peur :__", value: "`!total`, permet de connaitre le nombre total de titres disponibles sur Disney+. 🎞️" },
+                { name: "__• Pour les curieux : __", value:
+                    "`!bug`, permet de signaler un bug, un titre absent de Disney+ ou envoyer un commentaire (envoie via MP). 📝"+
+                    "\n`!credits`, permet de découvrir qui m'a donné la vie. ❤️"},
             )
             .setImage("https://repository-images.githubusercontent.com/257262775/3c241580-830e-11ea-87a4-e8f6aed05f7c")
             .setFooter("Discord+ uses the TMDb API but is not endorsed or certified by TMDb.", "https://i.imgur.com/tpO60XS.png");
