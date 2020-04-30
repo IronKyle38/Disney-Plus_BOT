@@ -11,7 +11,7 @@ module.exports = {
                 "content-type": "application/json;charset=utf-8"
             }
         };
-    
+
         var request = http.request(options, function (res) {
             var chunks = [];
             res.on("data", function (chunk) {
@@ -23,7 +23,7 @@ module.exports = {
                 var data_parse_short = JSON.parse(data_short);
     
                 TMDB_short_random = Math.floor(Math.random() * data_parse_short.total_results);
-    
+
                 if (TMDB_short_random === 0) {
                     TMDB_short_page = 1
                 } else {
@@ -51,6 +51,8 @@ module.exports = {
                             var data_short = body_short.toString();
                             var data_parse_short = JSON.parse(data_short);
     
+                            id = data_parse_short.results[TMDB_short_random].media_type+":"+data_parse_short.results[TMDB_short_random].id
+
                             var note_short = ""
                             if (data_parse_short.results[TMDB_short_random].vote_average < 0.5) {
                                 note_short = "Note indisponible"
@@ -70,11 +72,11 @@ module.exports = {
                                     genres_short = genres_short + ", "
                                 }
                             }
-    
+
                             const embed_short = new Discord.MessageEmbed()
                                 .setColor('#01b4e4')
-                                .setTitle(data_parse_short.results[TMDB_short_random].title)
-                                .setURL("https://www.themoviedb.org/"+data_parse_short.results[TMDB_short_random].media_type+"/"+data_parse_short.results[TMDB_short_random].id)
+                                .setTitle("▶️ "+data_parse_short.results[TMDB_short_random].title+" ◀️")
+                                .setURL("https://www.disneyplus.com/"+data_parse_short.comments[id])
                                 .setDescription(data_parse_short.results[TMDB_short_random].overview)
                                 .addFields(
                                     { name: 'Date de sortie', value: data_parse_short.results[TMDB_short_random].release_date, inline: true },
