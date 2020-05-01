@@ -6,7 +6,7 @@ module.exports = {
         message.author.send(
             "Bonjour,"+
             "\nSi tu as découvert un bug ou si tu souhaites m'envoyer une suggestion n'hésites pas !"+
-            "\nRemplis juste ce formulaire : https://docs.google.com/forms/d/e/1FAIpQLScr50E0Kxuw9YHc3mHfTlFaNbPSAUD9ZKmHK_UVKIldYl809w/viewform"+
+            "\nRemplis juste ce formulaire : https://forms.gle/Qo5daMfhW7EUPQck9"+
             "\nMerci pour ton aide. :heart:"
         )
         .catch(() => {
