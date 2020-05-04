@@ -11,7 +11,7 @@ module.exports = {
                 "content-type": "application/json;charset=utf-8"
             }
         };
-    
+
         var request = http.request(options, function (res) {
             var chunks = [];
             res.on("data", function (chunk) {
@@ -21,16 +21,16 @@ module.exports = {
                 var body_movie = Buffer.concat(chunks);
                 var data_movie = body_movie.toString();
                 var data_parse_movie = JSON.parse(data_movie);
-                
+
                 TMDB_movie_random = Math.floor(Math.random() * data_parse_movie.total_results);
-    
+
                 if (TMDB_movie_random === 0) {
                     TMDB_movie_page = 1
                 } else {
                     TMDB_movie_page = (Math.trunc(TMDB_movie_random/20))+1
                     TMDB_movie_random = TMDB_movie_random-(20*(TMDB_movie_page-1))
                 }
-                     
+
                     var options = {
                         "method": "GET",
                         "hostname": "api.themoviedb.org",
@@ -40,7 +40,7 @@ module.exports = {
                             "content-type": "application/json;charset=utf-8"
                         }
                     };
-    
+
                     var request = http.request(options, function (res) {
                         var chunks = [];
                         res.on("data", function (chunk) {
@@ -50,7 +50,9 @@ module.exports = {
                             var body_movie = Buffer.concat(chunks);
                             var data_movie = body_movie.toString();
                             var data_parse_movie = JSON.parse(data_movie);
-    
+
+                            id_movie = data_parse_movie.results[TMDB_movie_random].media_type+":"+data_parse_movie.results[TMDB_movie_random].id
+
                             var note_movie = ""
                             if (data_parse_movie.results[TMDB_movie_random].vote_average < 0.5) {
                                 note_movie = "Note indisponible"
@@ -62,7 +64,7 @@ module.exports = {
                                     note_movie = note_movie + "🤍"
                                 }
                             }
-    
+
                             var genres_movie = ""
                             for (let i = 0; i < data_parse_movie.results[TMDB_movie_random].genre_ids.length; i++) {
                                 genres_movie = genres_movie + TMDB_genres_movie[data_parse_movie.results[TMDB_movie_random].genre_ids[i]]
@@ -70,11 +72,11 @@ module.exports = {
                                     genres_movie = genres_movie + ", "
                                 }
                             }
-     
+
                             const embed_movie = new Discord.MessageEmbed()
                                 .setColor('#01b4e4')
-                                .setTitle(data_parse_movie.results[TMDB_movie_random].title)
-                                .setURL("https://www.themoviedb.org/"+data_parse_movie.results[TMDB_movie_random].media_type+"/"+data_parse_movie.results[TMDB_movie_random].id)
+                                .setTitle("▶️ "+data_parse_movie.results[TMDB_movie_random].title+" ◀️")
+                                .setURL("https://www.disneyplus.com/"+data_parse_movie.comments[id_movie])
                                 .setDescription(data_parse_movie.results[TMDB_movie_random].overview)
                                 .addFields(
                                     { name: 'Date de sortie', value: data_parse_movie.results[TMDB_movie_random].release_date, inline: true },
@@ -84,7 +86,7 @@ module.exports = {
                                 .setThumbnail("https://image.tmdb.org/t/p/original"+data_parse_movie.results[TMDB_movie_random].poster_path)
                                 .setImage("https://image.tmdb.org/t/p/original"+data_parse_movie.results[TMDB_movie_random].backdrop_path)
                                 .setFooter("Discord+ uses the TMDb API but is not endorsed or certified by TMDb.", "https://i.imgur.com/tpO60XS.png");
-                            
+
                             message.channel.send(embed_movie);
                             console.log("Command !random film use.");
                         });
