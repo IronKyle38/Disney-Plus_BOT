@@ -21,7 +21,7 @@ for (const file of commandFiles) {
 }
 
 client.on("ready", () => {
-    console.log("\x1b[34m%s\x1b[0m", "Bot online !");
+    console.log("Bot online !");
     client.user.setActivity("Disney+ | !info", { type: "WATCHING" })
 });
 
