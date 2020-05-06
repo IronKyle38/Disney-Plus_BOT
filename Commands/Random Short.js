@@ -53,6 +53,9 @@ module.exports = {
 
                             id_short = data_parse_short.results[TMDB_short_random].media_type+":"+data_parse_short.results[TMDB_short_random].id
 
+                            release_date = data_parse_short.results[TMDB_short_random].release_date.split("-")
+                            release_short = release_date[2]+"-"+release_date[1]+"-**"+release_date[0]+"**"
+
                             var note_short = ""
                             if (data_parse_short.results[TMDB_short_random].vote_average < 0.5) {
                                 note_short = "Note indisponible"
@@ -79,8 +82,8 @@ module.exports = {
                                 .setURL("https://www.disneyplus.com/"+data_parse_short.comments[id_short])
                                 .setDescription(data_parse_short.results[TMDB_short_random].overview)
                                 .addFields(
-                                    { name: 'Date de sortie', value: data_parse_short.results[TMDB_short_random].release_date, inline: true },
-                                    { name: 'Note', value: note_short, inline: true },
+                                    { name: 'Date de sortie', value: release_short, inline: true },
+                                    { name: "Note ("+data_parse_short.results[TMDB_short_random].vote_count+" notes)", value: note_short, inline: true },
                                     { name: 'Genres', value: genres_short },
                                 )
                                 .setThumbnail("https://image.tmdb.org/t/p/original"+data_parse_short.results[TMDB_short_random].poster_path)

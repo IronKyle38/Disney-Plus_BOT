@@ -53,6 +53,9 @@ module.exports = {
 
                             id_movie = data_parse_movie.results[TMDB_movie_random].media_type+":"+data_parse_movie.results[TMDB_movie_random].id
 
+                            release_date = data_parse_movie.results[TMDB_movie_random].release_date.split("-")
+                            release_movie = release_date[2]+"-"+release_date[1]+"-**"+release_date[0]+"**"
+
                             var note_movie = ""
                             if (data_parse_movie.results[TMDB_movie_random].vote_average < 0.5) {
                                 note_movie = "Note indisponible"
@@ -79,8 +82,8 @@ module.exports = {
                                 .setURL("https://www.disneyplus.com/"+data_parse_movie.comments[id_movie])
                                 .setDescription(data_parse_movie.results[TMDB_movie_random].overview)
                                 .addFields(
-                                    { name: 'Date de sortie', value: data_parse_movie.results[TMDB_movie_random].release_date, inline: true },
-                                    { name: 'Note', value: note_movie, inline: true },
+                                    { name: 'Date de sortie', value: release_movie, inline: true },
+                                    { name: "Note ("+data_parse_movie.results[TMDB_movie_random].vote_count+" notes)", value: note_movie, inline: true },
                                     { name: 'Genres', value: genres_movie },
                                 )
                                 .setThumbnail("https://image.tmdb.org/t/p/original"+data_parse_movie.results[TMDB_movie_random].poster_path)

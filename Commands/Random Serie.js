@@ -53,6 +53,9 @@ module.exports = {
 
                             id_TV = data_parse_TV.results[TMDB_TV_random].media_type+":"+data_parse_TV.results[TMDB_TV_random].id
 
+                            first_air_date = data_parse_TV.results[TMDB_TV_random].first_air_date.split("-")
+                            first_air_TV = first_air_date[2]+"-"+first_air_date[1]+"-**"+first_air_date[0]+"**"
+
                             var note_TV = ""
                             if (data_parse_TV.results[TMDB_TV_random].vote_average < 0.5) {
                                 note_TV = "Note indisponible"
@@ -79,8 +82,8 @@ module.exports = {
                                 .setURL("https://www.disneyplus.com/"+data_parse_TV.comments[id_TV])
                                 .setDescription(data_parse_TV.results[TMDB_TV_random].overview)
                                 .addFields(
-                                    { name: 'Première diffusion', value: data_parse_TV.results[TMDB_TV_random].first_air_date, inline: true },
-                                    { name: 'Note', value: note_TV, inline: true },
+                                    { name: 'Première diffusion', value: first_air_TV, inline: true },
+                                    { name: "Note ("+data_parse_TV.results[TMDB_TV_random].vote_count+" notes)", value: note_TV, inline: true },
                                     { name: 'Genres', value: genres_TV },
                                 )
                                 .setThumbnail("https://image.tmdb.org/t/p/original"+data_parse_TV.results[TMDB_TV_random].poster_path)
