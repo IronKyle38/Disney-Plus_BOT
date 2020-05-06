@@ -70,7 +70,7 @@ module.exports = {
                                 var str = (data_parse_movie.revenue).toLocaleString()
                                 var revenue = str.replace(/,/g, " ")
 
-                                console.log("\x1b[32m%s\x1b[0m", "Command !random total use.")
+                                console.log("\x1b[32m%s\x1b[0m", "Command !total use.")
                                 message.reply(
                                     "\nIl y a plus de : **" + (data_parse_movie.total_results + data_parse_TV.total_results + data_parse_short.total_results) + "** titres différents à visionner sur Disney+ ! 🍿" +
                                     "\nDont, **" + data_parse_movie.total_results + "** films, **" + data_parse_TV.total_results + "** séries et **" + data_parse_short.total_results + "** courts-métrages !" +
