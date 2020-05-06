@@ -1,6 +1,6 @@
 {
   "name": "discordbot",
-  "version": "2.4.0",
+  "version": "2.5.0",
   "description": "Just a discord bot",
   "main": "index.js",
   "scripts": {
@@ -9,6 +9,6 @@
   "author": "IronKyle38",
   "license": "MIT",
   "dependencies": {
-    "discord.js": "^12.1.1"
+    "discord.js": "^12.2.0"
   }
 }
