@@ -90,11 +90,11 @@ module.exports = {
                             .setImage("https://image.tmdb.org/t/p/original" + data_parse_short.results[TMDB_short_random].backdrop_path)
                             .setFooter("Discord+ uses the TMDb API but is not endorsed or certified by TMDb.", "https://i.imgur.com/tpO60XS.png");
 
-                        console.log("\x1b[32m%s\x1b[0m", "Command !random short use.")
+                        console.log("● Command !random short use.")
                         message.channel.send(embed_short)
 
                             .catch((error) => {
-                                console.log("\x1b[31m%s\x1b[0m", error.name + " : " + error.message)
+                                console.log("○ " + error.name + " : " + error.message)
                             })
                     });
                 });

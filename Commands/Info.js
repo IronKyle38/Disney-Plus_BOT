@@ -29,11 +29,11 @@ module.exports = {
             .setImage("https://repository-images.githubusercontent.com/257262775/3c241580-830e-11ea-87a4-e8f6aed05f7c")
             .setFooter("Discord+ uses the TMDb API but is not endorsed or certified by TMDb.", "https://i.imgur.com/tpO60XS.png");
 
-        console.log("\x1b[32m%s\x1b[0m", "Command !info use.")
+        console.log("● Command !info use.")
         message.channel.send(embed_info)
 
             .catch((error) => {
-                console.log("\x1b[31m%s\x1b[0m", error.name + " : " + error.message)
+                console.log("○ " + error.name + " : " + error.message)
             })
     }
 }

@@ -2,7 +2,7 @@ module.exports = {
     name: 'Credits',
     description: "Send credits to user",
     execute(message, package) {
-        console.log("\x1b[32m%s\x1b[0m", "Command !credits use.")
+        console.log("● Command !credits use.")
         message.channel.send(
             ">>> Créé avec amour par **IronKyle38** 🧡" +
             "\nCodé en JavaScript avec Node.js sur Visual Studio Code" +
@@ -17,7 +17,7 @@ module.exports = {
             "\n© Copyright - IronKyle38 - Avril 2020"
         )
             .catch((error) => {
-                console.log("\x1b[31m%s\x1b[0m", error.name + " : " + error.message)
+                console.log("○ " + error.name + " : " + error.message)
             })
     }
 }
