@@ -2,7 +2,7 @@ module.exports = {
     name: 'Credits',
     description: "Send credits to user",
     execute(message, package) {
-        console.log("● Command !credits use.")
+        console.log("• Command !credits use.")
         message.channel.send(
             ">>> Créé avec amour par **IronKyle38** 🧡" +
             "\nCodé en JavaScript avec Node.js sur Visual Studio Code" +

@@ -90,7 +90,7 @@ module.exports = {
                             .setImage("https://image.tmdb.org/t/p/original" + data_parse_movie.results[TMDB_movie_random].backdrop_path)
                             .setFooter("Discord+ uses the TMDb API but is not endorsed or certified by TMDb.", "https://i.imgur.com/tpO60XS.png");
 
-                        console.log("● Command !random film use.")
+                        console.log("• Command !random film use.")
                         message.channel.send(embed_movie)
 
                             .catch((error) => {
