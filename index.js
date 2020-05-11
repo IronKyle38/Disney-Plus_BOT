@@ -46,7 +46,7 @@ client.on('message', message => {
             break;
 
         case "!total":
-            client.commands.get('Total').execute(TMDB_list_movies, TMDB_api_key, http, TMDB_list_TV, TMDB_list_shorts, message);
+            client.commands.get('Total').execute(TMDB_list_movies, TMDB_api_key, http, TMDB_list_TV, TMDB_list_shorts, Discord, message);
             break;
 
         case "!bug":
