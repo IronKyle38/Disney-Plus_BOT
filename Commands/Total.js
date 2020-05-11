@@ -1,7 +1,7 @@
 module.exports = {
     name: 'Total',
     description: "Send the total of titles available on Disney+ FR",
-    execute(TMDB_list_movies, TMDB_api_key, http, TMDB_list_TV, TMDB_list_shorts, message) {
+    execute(TMDB_list_movies, TMDB_api_key, http, TMDB_list_TV, TMDB_list_shorts, Discord, message) {
         var options = {
             "method": "GET",
             "hostname": "api.themoviedb.org",
@@ -70,14 +70,27 @@ module.exports = {
                                 var str = (data_parse_movie.revenue).toLocaleString()
                                 var revenue = str.replace(/,/g, " ")
 
+                                const embed_total = new Discord.MessageEmbed()
+                                    .setColor('#01b4e4')
+                                    .setTitle("Disney+ en chiffres :")
+                                    .setURL("https://www.disneyplus.com/")
+                                    .setDescription("Il y a plus de **" + (data_parse_movie.total_results + data_parse_TV.total_results + data_parse_short.total_results) + "** titres différents à visionner sur Disney+ ! 🍿")
+                                    .addFields(
+                                        { name: 'Films', value: "**" + data_parse_movie.total_results + "**", inline: true },
+                                        { name: 'Séries', value: "**" + data_parse_TV.total_results + "**", inline: true },
+                                        { name: 'Courts-métrages', value: "**" + data_parse_short.total_results + "**", inline: true },
+                                        { name: '\u200b', value: "Pour une durée totale de :" },
+                                        { name: 'Jours', value: "**" + days + "**", inline: true },
+                                        { name: 'Heures', value: "**" + hours + "**", inline: true },
+                                        { name: 'Minutes', value: "**" + minutes + "**", inline: true },
+                                        { name: '\u200b', value: "Les films présents sur Disney+ ont représenté plus de **$" + revenue + "** de recettes. 💸" },
+                                    )
+                                    .setThumbnail("https://i.giphy.com/media/QxwnBM8MkgAdqqng5S/giphy.gif")
+                                    .setImage("https://i.giphy.com/media/T9KcDBkWHrWJLF2l5Q/giphy.gif")
+                                    .setFooter("Discord+ uses the TMDb API but is not endorsed or certified by TMDb.", "https://i.imgur.com/tpO60XS.png");
+
                                 console.log("• Command !total use.")
-                                message.reply(
-                                    "\nIl y a plus de : **" + (data_parse_movie.total_results + data_parse_TV.total_results + data_parse_short.total_results) + "** titres différents à visionner sur Disney+ ! 🍿" +
-                                    "\nDont, **" + data_parse_movie.total_results + "** films, **" + data_parse_TV.total_results + "** séries et **" + data_parse_short.total_results + "** courts-métrages !" +
-                                    "\nCe qui représente : **" + days + "** jours, **" + hours + "** heures et **" + minutes + "** minutes de divertissements ! ⏲️" +
-                                    "\n" +
-                                    "\nLes films présents sur Disney+ ont représenté plus de **$" + revenue + "** de recettes. 💸"
-                                )
+                                message.channel.send(embed_total)
 
                                     .catch((error) => {
                                         console.log("○ " + error.name + " : " + error.message)
