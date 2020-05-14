@@ -1,69 +1,69 @@
 const Discord = require("discord.js");
-const package = require("./package.json");
-const client = new Discord.Client();
+const FS = require('fs');
+const HTTPS = require("https");
+const Package = require("./package.json");
+const TMDb_List = require('./TMDb/TMDb_List.json');
 
-const TMDB_api_key = (process.env.TMDB_api_key);
-const TMDB_list_movies = (process.env.TMDB_list_movies);
-const TMDB_list_TV = (process.env.TMDB_list_TV);
-const TMDB_list_shorts = (process.env.TMDB_list_shorts);
-const TMDB_genres_movie = require("./TMDb/Genre_Movie.json")
-const TMDB_genres_TV = require("./TMDb/Genre_TV.json")
+const Google_Form_URL = (process.env.Google_Form_URL);
+const TMDB_API_Key = (process.env.TMDb_API_Key);
+const TMDb_Movie_List_ID = (process.env.TMDb_Movie_List_ID);
+const TMDb_TV_List_ID = (process.env.TMDb_TV_List_ID);
+const TMDb_Short_List_ID = (process.env.TMDb_Short_List_ID);
 
-var http = require("https");
+const Client = new Discord.Client();
 
-const fs = require('fs');
-client.commands = new Discord.Collection();
+Client.commands = new Discord.Collection();
 
-const commandFiles = fs.readdirSync('./Commands/').filter(file => file.endsWith('.js'));
+const commandFiles = FS.readdirSync('./Commands/').filter(file => file.endsWith('.js'));
 for (const file of commandFiles) {
     const command = require(`./Commands/${file}`);
-    client.commands.set(command.name, command);
-}
+    Client.commands.set(command.name, command);
+};
 
-client.on("ready", () => {
+Client.on("ready", () => {
     console.log("• Bot online !");
-    client.user.setActivity("Disney+ | !info", { type: "WATCHING" })
+    Client.user.setActivity("Disney+ | !info", { type: "WATCHING" });
 });
 
-client.on('message', message => {
+Client.on('message', message => {
     let args = message.content.toLowerCase();
 
     switch (args) {
-        case "!info":
-            client.commands.get('Info').execute(Discord, message);
-            break;
-
-        case "!random film":
-            client.commands.get('Random Film').execute(TMDB_list_movies, TMDB_api_key, http, TMDB_genres_movie, Discord, message);
-            break;
-
-        case "!random serie":
-            client.commands.get('Random Serie').execute(TMDB_list_TV, TMDB_api_key, http, TMDB_genres_TV, Discord, message);
-            break;
-
-        case "!random short":
-            client.commands.get('Random Short').execute(TMDB_list_shorts, TMDB_api_key, http, TMDB_genres_movie, Discord, message);
-            break;
-
-        case "!total":
-            client.commands.get('Total').execute(TMDB_list_movies, TMDB_api_key, http, TMDB_list_TV, TMDB_list_shorts, Discord, message);
-            break;
-
         case "!bug":
-            client.commands.get('Bug').execute(message)
+            Client.commands.get('Bug').execute(Discord, message);
             break;
 
         case "!credits":
-            client.commands.get('Credits').execute(message, package)
+            Client.commands.get('Credits').execute(Discord, Package, message);
+            break;
+
+        case "!info":
+            Client.commands.get('Info').execute(Discord, message);
             break;
 
         case "!random":
         case "!randomfilm":
         case "!randomserie":
         case "!randomshort":
-            client.commands.get('Old Command').execute(message);
+            Client.commands.get('Old Command').execute(message);
             break;
-    }
+
+        case "!random film":
+            Client.commands.get('Random Film').execute(TMDb_List, HTTPS, TMDB_API_Key, Google_Form_URL, Discord, message);
+            break;
+
+        case "!random serie":
+            Client.commands.get('Random Serie').execute(TMDb_List, HTTPS, TMDB_API_Key, Google_Form_URL, Discord, message);
+            break;
+
+        case "!random short":
+            Client.commands.get('Random Short').execute(TMDb_List, HTTPS, TMDB_API_Key, Google_Form_URL, Discord, message);
+            break;
+
+        case "!total":
+            Client.commands.get('Total').execute(HTTPS, TMDb_Movie_List_ID, TMDB_API_Key, TMDb_TV_List_ID, TMDb_Short_List_ID, Discord, message);
+            break;
+    };
 });
 
-client.login(process.env.Discord_api_key);
+Client.login(process.env.Discord_API_Key);
