@@ -1,23 +1,31 @@
 module.exports = {
     name: 'Credits',
     description: "Send credits to user",
-    execute(message, package) {
-        console.log("• Command !credits use.")
-        message.channel.send(
-            ">>> Créé avec amour par **IronKyle38** 🧡" +
-            "\nCodé en JavaScript avec Node.js sur Visual Studio Code" +
-            "\n" +
-            "\nCode source disponible sur GitHub :" +
-            "\n||https://github.com/IronKyle38/Discord-Plus||" +
-            "\n" +
-            "\nSources des données __Chronique Disney__ et __TMDb__" +
-            "\nDiscord+ utilise l'API TMDb mais n'est ni approuvé ni certifié par TMDb." +
-            "\n" +
-            "\nVersion : " + package.version +
-            "\n© Copyright - IronKyle38 - Avril 2020"
-        )
+    execute(Discord, Package, message) {
+        const Credits_Embed = new Discord.MessageEmbed()
+            .setColor('#01b4e4')
+            .setTitle('Credits')
+            .setDescription('Créé avec amour par [IronKyle38](https://www.twitter.com/IronKyle38) 💙')
+            .addFields(
+                { name: 'Langage', value: '[JavaScript](https://developer.mozilla.org/fr/JavaScript)\n[Node.js](https://nodejs.org/)', inline: true },
+                { name: 'Package', value: '[Discord.js](https://discord.js.org/)', inline: true },
+                { name: 'Logiciel', value: '[Visual Studio Code](https://code.visualstudio.com/)', inline: true },
+                { name: 'Sources des données', value: '[Chronique Disney](https://www.chroniquedisney.fr/programme/catalogue-disneyplus.php) et [TMDb](https://www.themoviedb.org)' },
+                { name: 'Code source', value: 'Disponible sur [GitHub](https://github.com/IronKyle38/Discord-Plus)', inline: true },
+                { name: 'Version', value: Package.version, inline: true },
+                {
+                    name: "Droits d'auteur", value:
+                        "This BOT is not affiliated with Disney+.\n" +
+                        "All trademarks referenced herein are the properties of their respective owners.\n" +
+                        "©2020 The Walt Disney Company. All rights reserved."
+                }
+            )
+            .setImage('https://repository-images.githubusercontent.com/257262775/3c241580-830e-11ea-87a4-e8f6aed05f7c')
+            .setFooter("Discord+ uses the TMDb API but is not endorsed or certified by TMDb.", "https://i.imgur.com/tpO60XS.png");
+        console.log("• Command !credits use.");
+        message.channel.send(Credits_Embed)
             .catch((error) => {
-                console.log("○ " + error.name + " : " + error.message)
-            })
+                console.log("○ " + error.name + " : " + error.message);
+            });
     }
-}
+};
