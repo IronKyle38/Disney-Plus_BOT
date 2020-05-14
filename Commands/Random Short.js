@@ -1,108 +1,111 @@
 module.exports = {
     name: 'Random Short',
     description: "Send a random short to user",
-    execute(TMDB_list_shorts, TMDB_api_key, http, TMDB_genres_movie, Discord, message) {
-        var options = {
-            "method": "GET",
-            "hostname": "api.themoviedb.org",
-            "port": null,
-            "path": "/4/list/" + TMDB_list_shorts + "?api_key=" + TMDB_api_key,
-            "headers": {
-                "content-type": "application/json;charset=utf-8"
-            }
-        };
+    execute(TMDb_List, HTTPS, TMDB_API_Key, Google_Form_URL, Discord, message) {
+        TMDB_Short_Random = Math.floor(Math.random() * TMDb_List.Short.length);
 
-        var request = http.request(options, function (res) {
-            var chunks = [];
-            res.on("data", function (chunk) {
-                chunks.push(chunk);
+        HTTPS.get(`https://api.themoviedb.org/3/movie/${TMDb_List.Short[TMDB_Short_Random].ID}?api_key=${TMDB_API_Key}&language=fr-FR&append_to_response=credits,translations`, (req) => {
+            let data = '';
+
+            req.on('data', (chunk) => {
+                data += chunk;
             });
-            res.on("end", function () {
-                var body_short = Buffer.concat(chunks);
-                var data_short = body_short.toString();
-                var data_parse_short = JSON.parse(data_short);
 
-                TMDB_short_random = Math.floor(Math.random() * data_parse_short.total_results);
+            req.on('end', () => {
+                data_parse = JSON.parse(data);
 
-                if (TMDB_short_random === 0) {
-                    TMDB_short_page = 1
+                if (data_parse.overview == "") {
+                    Overview = data_parse.translations.translations.filter(a => a.name == "English")[0].data.overview;
                 } else {
-                    TMDB_short_page = (Math.trunc(TMDB_short_random / 20)) + 1
-                    TMDB_short_random = TMDB_short_random - (20 * (TMDB_short_page - 1))
-                }
-
-                var options = {
-                    "method": "GET",
-                    "hostname": "api.themoviedb.org",
-                    "port": null,
-                    "path": "/4/list/" + TMDB_list_shorts + "?page=" + TMDB_short_page + "&api_key=" + TMDB_api_key + "&language=fr-FR",
-                    "headers": {
-                        "content-type": "application/json;charset=utf-8"
-                    }
+                    Overview = data_parse.overview
                 };
 
-                var request = http.request(options, function (res) {
-                    var chunks = [];
-                    res.on("data", function (chunk) {
-                        chunks.push(chunk);
+                var Director = ""
+                Crew = data_parse.credits.crew.filter(a => a.job == "Director")
+                if (Crew[0] == undefined) {
+                    Director = `[-](${Google_Form_URL}!random+short&entry.1530119858=${encodeURI(data_parse.title)})`;
+                } else {
+                    for (let i = 0; i < Crew.length; i++) {
+                        Director += Crew[i].name + '\n';
+                    };
+                };
+
+                if (data_parse.runtime == 0) {
+                    Runtime = `[-](${Google_Form_URL}!random+short&entry.1530119858=${encodeURI(data_parse.title)})`;
+                } else {
+                    Hours = Math.trunc(data_parse.runtime / 60);
+                    Minutes = data_parse.runtime - (Hours * 60);
+                    if (Hours == 0) {
+                        Runtime = `${Minutes} min`;
+                    } else {
+                        Runtime = `${Hours} h ${Minutes} min`;
+                    };
+                };
+
+                Release_Date = data_parse.release_date.split("-");
+
+                var Cast = ""
+                if (data_parse.credits.cast.length == 0) {
+                    Cast = `[-](${Google_Form_URL}!random+short&entry.1530119858=${encodeURI(data_parse.title)})`;
+                } else {
+                    if (data_parse.credits.cast.length >= 5) {
+                        max = 5;
+                    } else {
+                        max = data_parse.credits.cast.length;
+                    } for (let i = 0; i < max; i++) {
+                        Cast += data_parse.credits.cast[i].name + '\n';
+                    };
+                };
+
+                var Genre = ""
+                if (data_parse.genres.length == 0) {
+                    Genre = `[-](${Google_Form_URL}!random+short&entry.1530119858=${encodeURI(data_parse.title)})`;
+                } else {
+                    for (let i = 0; i < data_parse.genres.length; i++) {
+                        Genre += data_parse.genres[i].name + '\n';
+                    };
+                };
+
+                var Country = ""
+                if (data_parse.production_countries.length == 0) {
+                    Country = `[-](${Google_Form_URL}!random+short&entry.1530119858=${encodeURI(data_parse.title)})`;
+                } else {
+                    for (let i = 0; i < data_parse.production_countries.length; i++) {
+                        Country += `:flag_${data_parse.production_countries[i].iso_3166_1.toLowerCase()}: `;
+                    };
+                };
+
+                var Note = ""
+                if (data_parse.vote_average < 1) {
+                    Note = "Note indisponible";
+                } else {
+                    Note += "❤️".repeat(Math.round(data_parse.vote_average));
+                    Note += "🤍".repeat(10 - Math.round(data_parse.vote_average));
+                };
+
+                const Short_Embed = new Discord.MessageEmbed()
+                    .setColor('#01b4e4')
+                    .setTitle(`\`▶ ${data_parse.title} ◀\``)
+                    .setURL(`https://www.disneyplus.com/${TMDb_List.Short[TMDB_Short_Random].URL}`)
+                    .setDescription(Overview)
+                    .addFields(
+                        { name: 'Réalisé par', value: Director, inline: true },
+                        { name: 'Durée', value: Runtime, inline: true },
+                        { name: 'Date de sortie', value: Release_Date[0], inline: true },
+                        { name: 'Avec', value: Cast, inline: true },
+                        { name: 'Genre', value: Genre, inline: true },
+                        { name: "Pays d'origine", value: Country, inline: true },
+                        { name: `Note (${data_parse.vote_count} notes)`, value: Note }
+                    )
+                    .setThumbnail(`https://image.tmdb.org/t/p/original${data_parse.poster_path}`)
+                    .setImage(`https://image.tmdb.org/t/p/original${data_parse.backdrop_path}`)
+                    .setFooter("Discord+ uses the TMDb API but is not endorsed or certified by TMDb.", "https://i.imgur.com/tpO60XS.png");
+                console.log("• Command !random short use.");
+                message.channel.send(Short_Embed)
+                    .catch((error) => {
+                        console.log("○ " + error.name + " : " + error.message);
                     });
-                    res.on("end", function () {
-                        var body_short = Buffer.concat(chunks);
-                        var data_short = body_short.toString();
-                        var data_parse_short = JSON.parse(data_short);
-
-                        id_short = data_parse_short.results[TMDB_short_random].media_type + ":" + data_parse_short.results[TMDB_short_random].id
-
-                        release_date = data_parse_short.results[TMDB_short_random].release_date.split("-")
-                        release_short = release_date[2] + "/" + release_date[1] + "/**" + release_date[0] + "**"
-
-                        var note_short = "\u200b"
-                        if (data_parse_short.results[TMDB_short_random].vote_average < 0.5) {
-                            note_short = "Note indisponible"
-                        } else {
-                            for (let i = 0; i < Math.round(data_parse_short.results[TMDB_short_random].vote_average); i++) {
-                                note_short = note_short + "❤️"
-                            }
-                            for (let i = 0; i < (10 - Math.round(data_parse_short.results[TMDB_short_random].vote_average)); i++) {
-                                note_short = note_short + "🤍"
-                            }
-                        }
-
-                        var genres_short = "\u200b"
-                        for (let i = 0; i < data_parse_short.results[TMDB_short_random].genre_ids.length; i++) {
-                            genres_short = genres_short + TMDB_genres_movie[data_parse_short.results[TMDB_short_random].genre_ids[i]]
-                            if (i + 1 < data_parse_short.results[TMDB_short_random].genre_ids.length) {
-                                genres_short = genres_short + ", "
-                            }
-                        }
-
-                        const embed_short = new Discord.MessageEmbed()
-                            .setColor('#01b4e4')
-                            .setTitle("▶️ " + data_parse_short.results[TMDB_short_random].title + " ◀️")
-                            .setURL("https://www.disneyplus.com/" + data_parse_short.comments[id_short])
-                            .setDescription(data_parse_short.results[TMDB_short_random].overview)
-                            .addFields(
-                                { name: 'Date de sortie', value: release_short, inline: true },
-                                { name: "Note (" + data_parse_short.results[TMDB_short_random].vote_count + " notes)", value: note_short, inline: true },
-                                { name: 'Genres', value: genres_short },
-                            )
-                            .setThumbnail("https://image.tmdb.org/t/p/original" + data_parse_short.results[TMDB_short_random].poster_path)
-                            .setImage("https://image.tmdb.org/t/p/original" + data_parse_short.results[TMDB_short_random].backdrop_path)
-                            .setFooter("Discord+ uses the TMDb API but is not endorsed or certified by TMDb.", "https://i.imgur.com/tpO60XS.png");
-
-                        console.log("• Command !random short use.")
-                        message.channel.send(embed_short)
-
-                            .catch((error) => {
-                                console.log("○ " + error.name + " : " + error.message)
-                            })
-                    });
-                });
-                request.write(JSON.stringify({}));
-                request.end();
             });
         });
-        request.write(JSON.stringify({}));
-        request.end();
     }
-}
+};
