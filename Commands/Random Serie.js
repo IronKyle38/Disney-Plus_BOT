@@ -84,7 +84,7 @@ module.exports = {
 
                 const Movie_Embed = new Discord.MessageEmbed()
                     .setColor('#01b4e4')
-                    .setTitle(`\`▶ ${data_parse.name} ◀\``)
+                    .setTitle(`▶ ${data_parse.name} ◀`)
                     .setURL(`https://www.disneyplus.com/${TMDb_List.TV[TMDB_Movie_Random].URL}`)
                     .setDescription(Overview)
                     .addFields(
@@ -94,13 +94,13 @@ module.exports = {
                         { name: 'Avec', value: Cast, inline: true },
                         { name: 'Genre', value: Genre, inline: true },
                         { name: "Pays d'origine", value: Country, inline: true },
-                        { name: `Note (${data_parse.vote_count} notes)`, value: Note },
                         { name: 'Saisons', value: data_parse.number_of_seasons, inline: true },
-                        { name: 'Épisodes', value: data_parse.number_of_episodes, inline: true }
+                        { name: 'Épisodes', value: data_parse.number_of_episodes, inline: true },
+                        { name: `Note (${data_parse.vote_count} notes)`, value: Note }
                     )
                     .setThumbnail(`https://image.tmdb.org/t/p/original${data_parse.poster_path}`)
                     .setImage(`https://image.tmdb.org/t/p/original${data_parse.backdrop_path}`)
-                    .setFooter("Discord+ uses the TMDb API but is not endorsed or certified by TMDb.", "https://i.imgur.com/tpO60XS.png");
+                    .setFooter("Disney+ BOT uses the TMDb API but is not endorsed or certified by TMDb.", "https://i.imgur.com/tpO60XS.png");
                 console.log("• Command !random serie use.");
                 message.channel.send(Movie_Embed)
                     .catch((error) => {
