@@ -1,6 +1,6 @@
 {
-  "name": "discord-plus",
-  "version": "3.0.0",
+  "name": "disney-plus-bot",
+  "version": "3.0.1",
   "description": "A Dicord BOT that randomly selects a title from the French Disney+ catalog.",
   "main": "index.js",
   "scripts": {
