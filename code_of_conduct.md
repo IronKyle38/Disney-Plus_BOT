@@ -1,4 +1,3 @@
-
 # Charte Code de Conduite Contributeurs
 
 ## Notre engagement
@@ -77,4 +76,3 @@ Ce Code de Conduite est adapté du
 [Contributor Covenant](https://www.contributor-covenant.org), version 1.4,
 disponible à
 <https://www.contributor-covenant.org/fr/version/1/4/code-of-conduct>
-
