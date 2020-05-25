@@ -85,7 +85,7 @@ module.exports = {
 
                 const Short_Embed = new Discord.MessageEmbed()
                     .setColor('#01b4e4')
-                    .setTitle(`\`▶ ${data_parse.title} ◀\``)
+                    .setTitle(`▶ ${data_parse.title} ◀`)
                     .setURL(`https://www.disneyplus.com/${TMDb_List.Short[TMDB_Short_Random].URL}`)
                     .setDescription(Overview)
                     .addFields(
@@ -99,7 +99,7 @@ module.exports = {
                     )
                     .setThumbnail(`https://image.tmdb.org/t/p/original${data_parse.poster_path}`)
                     .setImage(`https://image.tmdb.org/t/p/original${data_parse.backdrop_path}`)
-                    .setFooter("Discord+ uses the TMDb API but is not endorsed or certified by TMDb.", "https://i.imgur.com/tpO60XS.png");
+                    .setFooter("Disney+ BOT uses the TMDb API but is not endorsed or certified by TMDb.", "https://i.imgur.com/tpO60XS.png");
                 console.log("• Command !random short use.");
                 message.channel.send(Short_Embed)
                     .catch((error) => {

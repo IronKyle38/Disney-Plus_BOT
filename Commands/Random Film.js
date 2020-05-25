@@ -97,7 +97,7 @@ module.exports = {
 
                 const Movie_Embed = new Discord.MessageEmbed()
                     .setColor('#01b4e4')
-                    .setTitle(`\`▶ ${data_parse.title} ◀\``)
+                    .setTitle(`▶ ${data_parse.title} ◀`)
                     .setURL(`https://www.disneyplus.com/${TMDb_List.Movie[TMDB_Movie_Random].URL}`)
                     .setDescription(Overview)
                     .addFields(
@@ -113,7 +113,7 @@ module.exports = {
                     )
                     .setThumbnail(`https://image.tmdb.org/t/p/original${data_parse.poster_path}`)
                     .setImage(`https://image.tmdb.org/t/p/original${data_parse.backdrop_path}`)
-                    .setFooter("Discord+ uses the TMDb API but is not endorsed or certified by TMDb.", "https://i.imgur.com/tpO60XS.png");
+                    .setFooter("Disney+ BOT uses the TMDb API but is not endorsed or certified by TMDb.", "https://i.imgur.com/tpO60XS.png");
                 console.log("• Command !random film use.");
                 message.channel.send(Movie_Embed)
                     .catch((error) => {
