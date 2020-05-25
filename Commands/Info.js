@@ -4,8 +4,8 @@ module.exports = {
     execute(Discord, message) {
         const Info_Embed = new Discord.MessageEmbed()
             .setColor('#01b4e4')
-            .setTitle("Discord+")
-            .setURL("https://github.com/IronKyle38/Discord-Plus")
+            .setTitle("Disney+ BOT")
+            .setURL("https://github.com/IronKyle38/Disney-Plus-BOT")
             .setDescription(
                 "Tu ne sais pas quoi regarder sur Disney+ ?" +
                 "\nJe vais t'aider à trouver la pépite qu'il te faut !" +
@@ -26,8 +26,8 @@ module.exports = {
                         "\n`!credits`, permet de découvrir qui m'a donné la vie. ❤️"
                 },
             )
-            .setImage("https://repository-images.githubusercontent.com/257262775/3c241580-830e-11ea-87a4-e8f6aed05f7c")
-            .setFooter("Discord+ uses the TMDb API but is not endorsed or certified by TMDb.", "https://i.imgur.com/tpO60XS.png");
+            .setImage("https://repository-images.githubusercontent.com/257262775/14c3e980-9e74-11ea-8ad6-52c35c8e9ca0")
+            .setFooter("Disney+ BOT uses the TMDb API but is not endorsed or certified by TMDb.", "https://i.imgur.com/tpO60XS.png");
         console.log("• Command !info use.");
         message.channel.send(Info_Embed)
             .catch((error) => {

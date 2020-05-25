@@ -11,7 +11,7 @@ module.exports = {
                 { name: 'Package', value: '[Discord.js](https://discord.js.org/)', inline: true },
                 { name: 'Logiciel', value: '[Visual Studio Code](https://code.visualstudio.com/)', inline: true },
                 { name: 'Sources des données', value: '[Chronique Disney](https://www.chroniquedisney.fr/programme/catalogue-disneyplus.php) et [TMDb](https://www.themoviedb.org)' },
-                { name: 'Code source', value: 'Disponible sur [GitHub](https://github.com/IronKyle38/Discord-Plus)', inline: true },
+                { name: 'Code source', value: 'Disponible sur [GitHub](https://github.com/IronKyle38/Disney-Plus-BOT)', inline: true },
                 { name: 'Version', value: Package.version, inline: true },
                 {
                     name: "Droits d'auteur", value:
@@ -20,8 +20,8 @@ module.exports = {
                         "©2020 The Walt Disney Company. All rights reserved."
                 }
             )
-            .setImage('https://repository-images.githubusercontent.com/257262775/3c241580-830e-11ea-87a4-e8f6aed05f7c')
-            .setFooter("Discord+ uses the TMDb API but is not endorsed or certified by TMDb.", "https://i.imgur.com/tpO60XS.png");
+            .setImage('https://repository-images.githubusercontent.com/257262775/14c3e980-9e74-11ea-8ad6-52c35c8e9ca0')
+            .setFooter("Disney+ BOT uses the TMDb API but is not endorsed or certified by TMDb.", "https://i.imgur.com/tpO60XS.png");
         console.log("• Command !credits use.");
         message.channel.send(Credits_Embed)
             .catch((error) => {

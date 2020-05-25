@@ -53,7 +53,7 @@ module.exports = {
                                     )
                                     .setThumbnail("https://i.giphy.com/media/QxwnBM8MkgAdqqng5S/giphy.gif")
                                     .setImage("https://i.giphy.com/media/T9KcDBkWHrWJLF2l5Q/giphy.gif")
-                                    .setFooter("Discord+ uses the TMDb API but is not endorsed or certified by TMDb.", "https://i.imgur.com/tpO60XS.png");
+                                    .setFooter("Disney+ BOT uses the TMDb API but is not endorsed or certified by TMDb.", "https://i.imgur.com/tpO60XS.png");
                                 console.log("• Command !total use.");
                                 message.channel.send(Total_Embed)
                                     .catch((error) => {
