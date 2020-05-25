@@ -5,7 +5,7 @@ module.exports = {
         const Info_Embed = new Discord.MessageEmbed()
             .setColor('#01b4e4')
             .setTitle("Disney+ BOT")
-            .setURL("https://github.com/IronKyle38/Disney-Plus-BOT")
+            .setURL("https://github.com/IronKyle38/Disney-Plus_BOT")
             .setDescription(
                 "Tu ne sais pas quoi regarder sur Disney+ ?" +
                 "\nJe vais t'aider à trouver la pépite qu'il te faut !" +

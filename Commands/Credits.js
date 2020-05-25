@@ -11,7 +11,7 @@ module.exports = {
                 { name: 'Package', value: '[Discord.js](https://discord.js.org/)', inline: true },
                 { name: 'Logiciel', value: '[Visual Studio Code](https://code.visualstudio.com/)', inline: true },
                 { name: 'Sources des données', value: '[Chronique Disney](https://www.chroniquedisney.fr/programme/catalogue-disneyplus.php) et [TMDb](https://www.themoviedb.org)' },
-                { name: 'Code source', value: 'Disponible sur [GitHub](https://github.com/IronKyle38/Disney-Plus-BOT)', inline: true },
+                { name: 'Code source', value: 'Disponible sur [GitHub](https://github.com/IronKyle38/Disney-Plus_BOT)', inline: true },
                 { name: 'Version', value: Package.version, inline: true },
                 {
                     name: "Droits d'auteur", value:
