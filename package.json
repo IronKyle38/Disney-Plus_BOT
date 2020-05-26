@@ -1,14 +1,14 @@
 {
   "name": "disney-plus_bot",
-  "version": "3.0.1",
-  "description": "A Dicord BOT that randomly selects a title from the French Disney+ catalog.",
+  "version": "4.0.0",
+  "description": "A BOT that randomly selects a title from the French Disney+ catalog.",
   "main": "index.js",
   "scripts": {
     "test": "node bin/dev"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/IronKyle38/Discord-Plus.git"
+    "url": "git+https://github.com/IronKyle38/Disney-Plus_BOT.git"
   },
   "keywords": [
     "discord",
@@ -22,10 +22,11 @@
   "author": "IronKyle38",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/IronKyle38/Discord-Plus/issues"
+    "url": "https://github.com/IronKyle38/Disney-Plus_BOT/issues"
   },
-  "homepage": "https://github.com/IronKyle38/Discord-Plus#readme",
+  "homepage": "https://github.com/IronKyle38/Disney-Plus_BOT#readme",
   "dependencies": {
-    "discord.js": "^12.2.0"
+    "discord.js": "^12.2.0",
+    "twitter-lite": "^0.13.0"
   }
 }
