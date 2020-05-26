@@ -54,10 +54,10 @@ module.exports = {
                                     .setThumbnail("https://i.giphy.com/media/QxwnBM8MkgAdqqng5S/giphy.gif")
                                     .setImage("https://i.giphy.com/media/T9KcDBkWHrWJLF2l5Q/giphy.gif")
                                     .setFooter("Disney+ BOT uses the TMDb API but is not endorsed or certified by TMDb.", "https://i.imgur.com/tpO60XS.png");
-                                console.log("• Command !total use.");
+                                console.log("• Command !total use (via Discord).");
                                 message.channel.send(Total_Embed)
                                     .catch((error) => {
-                                        console.log("○ " + error.name + " : " + error.message);
+                                        console.log(`○ ${error.name} : ${error.message}`);
                                     });
                             });
                         });

@@ -14,7 +14,7 @@ module.exports = {
             )
             .setImage('https://media1.tenor.com/images/3af1cc2e440012b9a79255b4f19190fc/tenor.gif')
             .setFooter("Discord+ uses the TMDb API but is not endorsed or certified by TMDb.", "https://i.imgur.com/tpO60XS.png");
-        console.log("• Command !bug use.");
+        console.log("• Command !bug use (via Discord).");
         message.author.send(BUG_Embed)
             .catch(() => {
                 console.log("○ Can't send private message to user.");
@@ -23,7 +23,7 @@ module.exports = {
                     "\nMerci de vérifier tes paramètres de confidentialités afin d'autoriser les messages privés en provenance des membres du serveur. ✉️"
                 )
                     .catch((error) => {
-                        console.log("○ " + error.name + " : " + error.message)
+                        console.log(`○ ${error.name} : ${error.message}`);
                     });
             });
     }

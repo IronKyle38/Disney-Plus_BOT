@@ -101,10 +101,10 @@ module.exports = {
                     .setThumbnail(`https://image.tmdb.org/t/p/original${data_parse.poster_path}`)
                     .setImage(`https://image.tmdb.org/t/p/original${data_parse.backdrop_path}`)
                     .setFooter("Disney+ BOT uses the TMDb API but is not endorsed or certified by TMDb.", "https://i.imgur.com/tpO60XS.png");
-                console.log("• Command !random serie use.");
+                console.log("• Command !random serie use (via Discord).");
                 message.channel.send(Movie_Embed)
                     .catch((error) => {
-                        console.log("○ " + error.name + " : " + error.message);
+                        console.log(`○ ${error.name} : ${error.message}`);
                     });
             });
         });

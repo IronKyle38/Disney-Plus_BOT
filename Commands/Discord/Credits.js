@@ -22,10 +22,10 @@ module.exports = {
             )
             .setImage('https://repository-images.githubusercontent.com/257262775/14c3e980-9e74-11ea-8ad6-52c35c8e9ca0')
             .setFooter("Disney+ BOT uses the TMDb API but is not endorsed or certified by TMDb.", "https://i.imgur.com/tpO60XS.png");
-        console.log("• Command !credits use.");
+        console.log("• Command !credits use (via Discord).");
         message.channel.send(Credits_Embed)
             .catch((error) => {
-                console.log("○ " + error.name + " : " + error.message);
+                console.log(`○ ${error.name} : ${error.message}`);
             });
     }
 };
