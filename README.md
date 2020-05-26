@@ -1,15 +1,23 @@
 <div align="center">
-  <br />
-  <p>
-    <a><img src="https://lh6.googleusercontent.com/NfzoI_oici5RT1aBi_UljOnZ3t8gUAyCLLnxBYZoW_UB21XtmKsiASJVcCgTErfkuLsRdDbweuy4LVac08smEg_C7YkhKHXhhUdU8OmQHdeEswm8z64UuMUCLfoo" width="600" /></a>
-  </p>
-  <p>
-    <a href="https://github.com/IronKyle38/Disney-Plus_BOT/commits/master"><img src="https://img.shields.io/github/last-commit/IronKyle38/Disney-Plus_BOT" alt="Last Commit" /></a>
-    <a href="https://github.com/IronKyle38/Disney-Plus_BOT/network/dependencies"><img src="https://img.shields.io/librariesio/github/IronKyle38/Disney-Plus_BOT" alt="Dependencies Status" /></a>
-    <a href="https://github.com/IronKyle38/Disney-Plus_BOT/releases/latest"><img src="https://img.shields.io/github/v/release/IronKyle38/Disney-Plus_BOT?include_prereleases" alt="Release" /></a>
-    <a href="https://github.com/IronKyle38/Disney-Plus_BOT"><img src="https://img.shields.io/github/languages/code-size/IronKyle38/Disney-Plus_BOT" alt="Code Size" /></a>
-    <a href="LICENSE"><img src="https://img.shields.io/github/license/IronKyle38/Disney-Plus_BOT" alt="License" /></a>
-  </p>
+    <p>
+        <a><img src="https://lh6.googleusercontent.com/NfzoI_oici5RT1aBi_UljOnZ3t8gUAyCLLnxBYZoW_UB21XtmKsiASJVcCgTErfkuLsRdDbweuy4LVac08smEg_C7YkhKHXhhUdU8OmQHdeEswm8z64UuMUCLfoo"
+                width="600" /></a>
+    </p>
+    <p>
+        <a href="https://github.com/IronKyle38/Disney-Plus_BOT/commits/master"><img
+                src="https://img.shields.io/github/last-commit/IronKyle38/Disney-Plus_BOT" alt="Last Commit" /></a>
+        <a href="https://github.com/IronKyle38/Disney-Plus_BOT/network/dependencies"><img
+                src="https://img.shields.io/librariesio/github/IronKyle38/Disney-Plus_BOT"
+                alt="Dependencies Status" /></a>
+        <a href="https://github.com/IronKyle38/Disney-Plus_BOT/releases/latest"><img
+                src="https://img.shields.io/github/v/release/IronKyle38/Disney-Plus_BOT?include_prereleases"
+                alt="Release" /></a>
+        <a href="https://github.com/IronKyle38/Disney-Plus_BOT"><img
+                src="https://img.shields.io/github/languages/code-size/IronKyle38/Disney-Plus_BOT"
+                alt="Code Size" /></a>
+        <a href="LICENSE"><img src="https://img.shields.io/github/license/IronKyle38/Disney-Plus_BOT"
+                alt="License" /></a>
+    </p>
 </div>
 
 # Disney+ BOT
