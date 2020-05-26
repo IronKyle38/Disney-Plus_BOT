@@ -1,3 +1,9 @@
+[![GitHub last commit](https://img.shields.io/github/last-commit/IronKyle38/Disney-Plus_BOT)](https://github.com/IronKyle38/Disney-Plus_BOT/commits/master)
+[![Libraries.io dependency status for GitHub repo](https://img.shields.io/librariesio/github/IronKyle38/Disney-Plus_BOT)](https://github.com/IronKyle38/Disney-Plus_BOT/network/dependencies)
+[![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/IronKyle38/Disney-Plus_BOT?include_prereleases)](https://github.com/IronKyle38/Disney-Plus_BOT/releases/latest)
+[![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/IronKyle38/Disney-Plus_BOT)](https://github.com/IronKyle38/Disney-Plus_BOT)
+[![GitHub](https://img.shields.io/github/license/IronKyle38/Disney-Plus_BOT)](LICENSE)
+
 # Disney+ BOT
 Disney+ BOT est un BOT Discord permettant de sélectionner aléatoirement un titre parmi le catalogue français de Disney+.
 
