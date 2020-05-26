@@ -45,6 +45,7 @@ Pour Discord, utilisez le lien d'[invitation](https://discordapp.com/oauth2/auth
 
 ### Twitter
 Pour Twitter il vous suffit de vous rendre sur le profil de [@DisneyPlusBOT](https://twitter.com/DisneyPlusBOT).
+
 [![Twitter Follow](https://img.shields.io/twitter/follow/DisneyPlusBOT?style=social)](https://twitter.com/intent/follow?screen_name=DisneyPlusBOT)
 
 ## Utilisation
@@ -70,21 +71,25 @@ Il suffit d'envoyer un des tweets suivants :
 - `@DisneyPlusBOT credits`, permet d'afficher tous les crédits liés à la création du BOT. [![Twitter credits](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2Fintent%2Ftweet%3Ftext%3D%2540DisneyPlusBOT%2Bcredits)](https://twitter.com/intent/tweet?text=%40DisneyPlusBOT+credits)
 
 ## Contribution
-Toute contribution est la bienvenue.
-Pour les changements majeurs, veuillez d'abord ouvrir une *issue* pour discuter de ce que vous aimeriez changer.
+Toute contribution est la bienvenue. Pour les changements majeurs, veuillez d'abord ouvrir une *issue* pour discuter de ce que vous aimeriez changer.
 
 ## Code de conduite pour les contributions
 [Charte](code_of_conduct.md)
 
 ## Auteurs et remerciements
 Créé avec amour par IronKyle38 [![Twitter Follow](https://img.shields.io/twitter/follow/IronKyle38?style=social)](https://twitter.com/intent/follow?screen_name=ironkyle38)
+
 Codé en JavaScript avec Node.js sur Visual Studio Code.
+
 Sources des données [Chronique Disney](https://www.chroniquedisney.fr/programme/catalogue-disneyplus.php). [![Twitter Follow](https://img.shields.io/twitter/follow/ChroniqueDisney?style=social)](https://twitter.com/intent/follow?screen_name=ChroniqueDisney)
+
 Disney+ BOT utilise l'API TMDb mais n'est ni approuvé ni certifié par TMDb.
 
 ## Copyright
 This BOT is not affiliated with Disney+.
+
 All trademarks referenced herein are the properties of their respective owners.
+
 ©2020 The Walt Disney Company. All rights reserved. 
 
 ## Licence
