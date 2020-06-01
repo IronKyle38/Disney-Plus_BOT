@@ -72,8 +72,18 @@ Discord_Client.on('message', message => {
     };
 });
 
+let Film_Of_The_Day = require("./Commands/Twitter/Film Of The Day.js");
+Film_Of_The_Day(TMDb_List, HTTPS, TMDB_API_Key, Twitter_Client);
+
 const stream = Twitter_Client.stream("statuses/filter", { track: "@DisneyPlusBOT" }).on("data", Tweet => {
-    let Args = Tweet.text.replace(/@DisneyPlusBOT /g, '').toLowerCase();
+
+    var Args = Tweet.text;
+
+    for (let i = 0; i < Tweet.entities.user_mentions.length; i++) {
+        Replace = `@${Tweet.entities.user_mentions[i].screen_name} `;
+        Args = Args.replace(RegExp(Replace, "g"), "");
+    };
+    Args = Args.toLowerCase();
 
     switch (Args) {
         case "bug":
