@@ -1,6 +1,6 @@
 {
   "name": "disney-plus_bot",
-  "version": "4.0.0",
+  "version": "4.1.0",
   "description": "A BOT that randomly selects a title from the French Disney+ catalog.",
   "main": "index.js",
   "scripts": {
