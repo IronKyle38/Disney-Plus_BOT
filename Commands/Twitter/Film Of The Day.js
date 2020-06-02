@@ -1,17 +1,17 @@
 module.exports = function Film_Of_The_Day(TMDb_List, HTTPS, TMDB_API_Key, Twitter_Client) {
     var Today = new Date();
-    var Tweet_Day = new Date(
+    var Tweet_Day = new Date(Date.UTC(
         Today.getFullYear(),
         Today.getMonth(),
         Today.getDate(),
-        10
-    );
+        8
+    ));
 
-    if (Today.getHours() >= 10) {
+    if (Today.getUTCHours() >= Tweet_Day.getUTCHours()) {
         Tweet_Day.setDate(Today.getDate() + 1);
     };
 
-    console.log("• Film of the day planned for:" + Tweet_Day);
+    console.log("• Film of the day planned for: " + Tweet_Day);
 
     var ms_To_Tweet_Day = Tweet_Day.getTime() - Today.getTime();
 
