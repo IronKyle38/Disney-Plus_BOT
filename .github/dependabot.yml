@@ -9,7 +9,7 @@ updates:
     directory: "/" # Location of package manifests
     schedule:
       interval: "daily"
-      reviewers:
+    reviewers:
       - "IronKyle38"
-      assignees:
+    assignees:
       - "IronKyle38"
