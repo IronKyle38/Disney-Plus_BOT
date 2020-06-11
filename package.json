@@ -27,6 +27,6 @@
   "homepage": "https://github.com/IronKyle38/Disney-Plus_BOT#readme",
   "dependencies": {
     "discord.js": "^12.2.0",
-    "twitter-lite": "^0.13.0"
+    "twitter-lite": "^0.14.0"
   }
 }
