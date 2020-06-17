@@ -16,7 +16,12 @@ module.exports = function Film_Of_The_Day(TMDb_List, HTTPS, TMDB_API_Key, Twitte
     var ms_To_Tweet_Day = Tweet_Day.getTime() - Today.getTime();
 
     setTimeout(function () {
-        TMDB_Movie_Random = Math.floor(Math.random() * TMDb_List.Movie.length);
+        do {
+            TMDB_Movie_Random = Math.floor(Math.random() * TMDb_List.Movie.length);
+            if (TMDb_List.Movie[TMDB_Movie_Random].Film_Of_The_Day == true) {
+                console.log("○ The film has already been chosen for The Film Of The Day tweet.");
+            };
+        } while (TMDb_List.Movie[TMDB_Movie_Random].Film_Of_The_Day == true);
 
         HTTPS.get(`https://api.themoviedb.org/3/movie/${TMDb_List.Movie[TMDB_Movie_Random].ID}?api_key=${TMDB_API_Key}&language=fr-FR&append_to_response=credits,translations`, (req) => {
             let data = '';
