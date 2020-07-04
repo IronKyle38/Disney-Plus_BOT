@@ -2,9 +2,9 @@ module.exports = {
     name: 'Random Serie',
     description: "Send a random serie to user",
     execute(TMDb_List, HTTPS, TMDB_API_Key, Google_Form_URL, Discord, message) {
-        TMDB_Movie_Random = Math.floor(Math.random() * TMDb_List.TV.length);
+        TMDB_TV_Random = Math.floor(Math.random() * TMDb_List.TV.length);
 
-        HTTPS.get(`https://api.themoviedb.org/3/tv/${TMDb_List.TV[TMDB_Movie_Random].ID}?api_key=${TMDB_API_Key}&language=fr-FR&append_to_response=credits,translations`, (req) => {
+        HTTPS.get(`https://api.themoviedb.org/3/tv/${TMDb_List.TV[TMDB_TV_Random].ID}?api_key=${TMDB_API_Key}&language=fr-FR&append_to_response=credits,translations`, (req) => {
             let data = '';
 
             req.on('data', (chunk) => {
@@ -85,7 +85,7 @@ module.exports = {
                 const Movie_Embed = new Discord.MessageEmbed()
                     .setColor('#01b4e4')
                     .setTitle(`▶ ${data_parse.name} ◀`)
-                    .setURL(`https://www.disneyplus.com/${TMDb_List.TV[TMDB_Movie_Random].URL}`)
+                    .setURL(`https://www.disneyplus.com/${TMDb_List.TV[TMDB_TV_Random].URL}`)
                     .setDescription(Overview)
                     .addFields(
                         { name: 'Réalisé par', value: Director, inline: true },
@@ -94,9 +94,9 @@ module.exports = {
                         { name: 'Avec', value: Cast, inline: true },
                         { name: 'Genre', value: Genre, inline: true },
                         { name: "Pays d'origine", value: Country, inline: true },
-                        { name: 'Saisons', value: data_parse.number_of_seasons, inline: true },
-                        { name: 'Épisodes', value: data_parse.number_of_episodes, inline: true },
-                        { name: `Note (${data_parse.vote_count} notes)`, value: Note }
+                        { name: 'Saisons', value: TMDb_List.TV[TMDB_TV_Random].Number_Of_Seasons, inline: true },
+                        { name: 'Épisodes', value: TMDb_List.TV[TMDB_TV_Random].Number_Of_Episodes, inline: true },
+                        { name: `Note (${data_parse.vote_count} notes)`, value: `[${Note}](https://www.themoviedb.org/tv/${TMDb_List.TV[TMDB_TV_Random].ID})` }
                     )
                     .setThumbnail(`https://image.tmdb.org/t/p/original${data_parse.poster_path}`)
                     .setImage(`https://image.tmdb.org/t/p/original${data_parse.backdrop_path}`)
