@@ -95,7 +95,7 @@ module.exports = {
                         { name: 'Avec', value: Cast, inline: true },
                         { name: 'Genre', value: Genre, inline: true },
                         { name: "Pays d'origine", value: Country, inline: true },
-                        { name: `Note (${data_parse.vote_count} notes)`, value: Note }
+                        { name: `Note (${data_parse.vote_count} notes)`, value: `[${Note}](https://www.themoviedb.org/movie/${TMDb_List.Short[TMDB_Short_Random].ID})` }
                     )
                     .setThumbnail(`https://image.tmdb.org/t/p/original${data_parse.poster_path}`)
                     .setImage(`https://image.tmdb.org/t/p/original${data_parse.backdrop_path}`)

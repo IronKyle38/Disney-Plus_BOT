@@ -109,7 +109,7 @@ module.exports = {
                         { name: "Pays d'origine", value: Country, inline: true },
                         { name: 'Budget', value: Budget, inline: true },
                         { name: 'Recette', value: Revenue, inline: true },
-                        { name: `Note (${data_parse.vote_count} notes)`, value: Note }
+                        { name: `Note (${data_parse.vote_count} notes)`, value: `[${Note}](https://www.themoviedb.org/movie/${TMDb_List.Movie[TMDB_Movie_Random].ID})` }
                     )
                     .setThumbnail(`https://image.tmdb.org/t/p/original${data_parse.poster_path}`)
                     .setImage(`https://image.tmdb.org/t/p/original${data_parse.backdrop_path}`)
