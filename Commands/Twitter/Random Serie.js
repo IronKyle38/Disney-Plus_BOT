@@ -1,7 +1,7 @@
 module.exports = function Random_Serie(TMDb_List, HTTPS, TMDB_API_Key, Twitter_Client, Tweet) {
-    TMDB_Movie_Random = Math.floor(Math.random() * TMDb_List.TV.length);
+    TMDB_TV_Random = Math.floor(Math.random() * TMDb_List.TV.length);
 
-    HTTPS.get(`https://api.themoviedb.org/3/tv/${TMDb_List.TV[TMDB_Movie_Random].ID}?api_key=${TMDB_API_Key}&language=fr-FR&append_to_response=credits,translations`, (req) => {
+    HTTPS.get(`https://api.themoviedb.org/3/tv/${TMDb_List.TV[TMDB_TV_Random].ID}?api_key=${TMDB_API_Key}&language=fr-FR&append_to_response=credits,translations`, (req) => {
         let data = '';
 
         req.on('data', (chunk) => {
@@ -11,7 +11,7 @@ module.exports = function Random_Serie(TMDb_List, HTTPS, TMDB_API_Key, Twitter_C
         req.on('end', () => {
             data_parse = JSON.parse(data);
 
-            URL = `https://www.disneyplus.com/fr-fr/${TMDb_List.TV[TMDB_Movie_Random].URL}`;
+            URL = `https://www.disneyplus.com/fr-fr/${TMDb_List.TV[TMDB_TV_Random].URL}`;
 
             var Note = ""
             if (data_parse.vote_average < 1) {
