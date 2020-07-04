@@ -67,7 +67,7 @@ Discord_Client.on('message', message => {
             break;
 
         case "!total":
-            Discord_Client.commands.get('Total').execute(HTTPS, TMDb_Movie_List_ID, TMDB_API_Key, TMDb_TV_List_ID, TMDb_Short_List_ID, Discord, message);
+            Discord_Client.commands.get('Total').execute(HTTPS, TMDb_Movie_List_ID, TMDB_API_Key, TMDb_TV_List_ID, TMDb_Short_List_ID, TMDb_List, Discord, message);
             break;
     };
 });
@@ -113,7 +113,7 @@ const stream = Twitter_Client.stream("statuses/filter", { track: "@DisneyPlusBOT
 
         case "total":
             let Total = require("./Commands/Twitter/Total.js");
-            Total(HTTPS, TMDb_Movie_List_ID, TMDB_API_Key, TMDb_TV_List_ID, TMDb_Short_List_ID, Twitter_Client, Tweet);
+            Total(HTTPS, TMDb_Movie_List_ID, TMDB_API_Key, TMDb_TV_List_ID, TMDb_Short_List_ID, TMDb_List, Twitter_Client, Tweet);
             break;
     };
 });
