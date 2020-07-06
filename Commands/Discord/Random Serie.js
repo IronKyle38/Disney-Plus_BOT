@@ -74,6 +74,13 @@ module.exports = {
                     };
                 };
 
+                var Special_Season = ""
+                if (TMDb_List.TV[TMDB_TV_Random].Special != null) {
+                    Special_Season = `[**OUI**](https://www.disneyplus.com/${TMDb_List.TV[TMDB_TV_Random].Special})`;
+                } else {
+                    Special_Season = "NON";
+                };
+
                 var Note = ""
                 if (data_parse.vote_average < 1) {
                     Note = "Note indisponible";
@@ -96,6 +103,7 @@ module.exports = {
                         { name: "Pays d'origine", value: Country, inline: true },
                         { name: 'Saisons', value: TMDb_List.TV[TMDB_TV_Random].Number_Of_Seasons, inline: true },
                         { name: 'Épisodes', value: TMDb_List.TV[TMDB_TV_Random].Number_Of_Episodes, inline: true },
+                        { name: 'Saisons spéciales', value: Special_Season, inline: true },
                         { name: `Note (${data_parse.vote_count} notes)`, value: `[${Note}](https://www.themoviedb.org/tv/${TMDb_List.TV[TMDB_TV_Random].ID})` }
                     )
                     .setThumbnail(`https://image.tmdb.org/t/p/original${data_parse.poster_path}`)
