@@ -70,6 +70,13 @@ Discord_Client.on('message', message => {
             Discord_Client.commands.get('Total').execute(HTTPS, TMDb_Movie_List_ID, TMDB_API_Key, TMDb_TV_List_ID, TMDb_Short_List_ID, TMDb_List, Discord, message);
             break;
     };
+
+    if (args.includes("!search")) {
+        if (message.author.bot === false) {
+            let Search = require("./Commands/Discord/Search.js");
+            Search(args, HTTPS, TMDB_API_Key, Discord, message, TMDb_List);
+        };
+    };
 });
 
 let Film_Of_The_Day = require("./Commands/Twitter/Film Of The Day.js");
