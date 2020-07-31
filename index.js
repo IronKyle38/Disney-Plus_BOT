@@ -74,7 +74,7 @@ Discord_Client.on('message', message => {
     if (args.includes("!search")) {
         if (message.author.bot === false) {
             let Search = require("./Commands/Discord/Search.js");
-            Search(args, HTTPS, TMDB_API_Key, Discord, message, TMDb_List);
+            Search(args, HTTPS, TMDB_API_Key, Discord, message, TMDb_List, Google_Form_URL);
         };
     };
 });
