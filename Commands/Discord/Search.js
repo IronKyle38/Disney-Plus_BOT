@@ -1,4 +1,4 @@
-module.exports = function Search(args, HTTPS, TMDB_API_Key, Discord, message, TMDb_List) {
+module.exports = function Search(args, HTTPS, TMDB_API_Key, Discord, message, TMDb_List, Google_Form_URL) {
     args_split = args.split(" ");
 
     switch (args_split[1]) {
@@ -28,14 +28,18 @@ module.exports = function Search(args, HTTPS, TMDB_API_Key, Discord, message, TM
                             break;
 
                         case 1:
-                            Release_Date = data_parse.results[0].release_date.split("-");
+                            if (data_parse.results[0].release_date === undefined) {
+                                Release_Date = `[••••](${Google_Form_URL}!search+movie&entry.1530119858=${encodeURI(data_parse.results[0].title)})`;
+                            } else {
+                                Release_Date = data_parse.results[0].release_date.split("-")[0];
+                            };
 
                             const Movie_Result_Embed = new Discord.MessageEmbed()
                                 .setColor('#01b4e4')
                                 .setTitle("1 résultat")
                                 .setDescription(
                                     "\nLe titre suivant a été trouvé :" +
-                                    `\n\n**[${data_parse.results[0].title}](https://www.themoviedb.org/movie/${data_parse.results[0].id})**, sorti en **${Release_Date[0]}**` +
+                                    `\n\n**[${data_parse.results[0].title}](https://www.themoviedb.org/movie/${data_parse.results[0].id})**, sorti en ${Release_Date}` +
                                     "\n\nCorrespond-il à celui recherché ?"
                                 )
                                 .addFields(
@@ -96,8 +100,12 @@ module.exports = function Search(args, HTTPS, TMDB_API_Key, Discord, message, TM
                             };
 
                             for (let i = 0; i < j; i++) {
-                                Release_Date = data_parse.results[i].release_date.split("-")
-                                Reply += `\n:${i + 1}: : **[${data_parse.results[i].title}](https://www.themoviedb.org/movie/${data_parse.results[i].id})**, sorti en **${Release_Date[0]}**`;
+                                if (data_parse.results[i].release_date === undefined) {
+                                    Release_Date = `[••••](${Google_Form_URL}!search+movie&entry.1530119858=${encodeURI(data_parse.results[i].title)})`;
+                                } else {
+                                    Release_Date = data_parse.results[i].release_date.split("-")[0];
+                                };
+                                Reply += `\n:${i + 1}: : **[${data_parse.results[i].title}](https://www.themoviedb.org/movie/${data_parse.results[i].id})**, sorti en ${Release_Date}`;
                             };
 
                             const Movie_Results_Embed = new Discord.MessageEmbed()
@@ -210,14 +218,18 @@ module.exports = function Search(args, HTTPS, TMDB_API_Key, Discord, message, TM
                             break;
 
                         case 1:
-                            Release_Date = data_parse.results[0].first_air_date.split("-");
+                            if (data_parse.results[0].first_air_date === undefined) {
+                                Release_Date = `[••••](${Google_Form_URL}!search+movie&entry.1530119858=${encodeURI(data_parse.results[0].name)})`;
+                            } else {
+                                Release_Date = data_parse.results[0].first_air_date.split("-")[0];
+                            };
 
                             const TV_Result_Embed = new Discord.MessageEmbed()
                                 .setColor('#01b4e4')
                                 .setTitle("1 résultat")
                                 .setDescription(
                                     "\nLe titre suivant a été trouvé :" +
-                                    `\n\n**[${data_parse.results[0].name}](https://www.themoviedb.org/tv/${data_parse.results[0].id})**, sorti en **${Release_Date[0]}**` +
+                                    `\n\n**[${data_parse.results[0].name}](https://www.themoviedb.org/tv/${data_parse.results[0].id})**, sorti en ${Release_Date}` +
                                     "\n\nCorrespond-il à celui recherché ?"
                                 )
                                 .addFields(
@@ -278,8 +290,12 @@ module.exports = function Search(args, HTTPS, TMDB_API_Key, Discord, message, TM
                             };
 
                             for (let i = 0; i < j; i++) {
-                                Release_Date = data_parse.results[i].first_air_date.split("-")
-                                Reply += `\n:${i + 1}: : **[${data_parse.results[i].name}](https://www.themoviedb.org/tv/${data_parse.results[i].id})**, sorti en **${Release_Date[0]}**`;
+                                if (data_parse.results[i].first_air_date === undefined) {
+                                    Release_Date = `[••••](${Google_Form_URL}!search+movie&entry.1530119858=${encodeURI(data_parse.results[i].name)})`;
+                                } else {
+                                    Release_Date = data_parse.results[i].first_air_date.split("-")[0];
+                                };
+                                Reply += `\n:${i + 1}: : **[${data_parse.results[i].name}](https://www.themoviedb.org/tv/${data_parse.results[i].id})**, sorti en ${Release_Date}`;
                             };
 
                             const TV_Results_Embed = new Discord.MessageEmbed()
