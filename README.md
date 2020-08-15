@@ -56,6 +56,8 @@ Il suffit d'envoyer une des commandes suivantes :
 - `!random film`, permet de découvrir un film au hasard.
 - `!random serie`, permet de découvrir une série au hasard.
 - `!random short`, permet de découvrir un court-métrage au hasard.
+- `!search movie <Nom du titre>`, permet de rechercher un film ou un court-métrage.
+- `!search serie <Nom du titre>`, permet de rechercher une série.
 - `!total`, permet de connaitre le nombre total de titres disponibles sur Disney+.
 - `!bug`, permet de signaler un bug, un titre absent de Disney+ ou envoyer un commentaire (envoie via MP).
 - `!credits`, permet d'afficher tous les crédits liés à la création du BOT.
