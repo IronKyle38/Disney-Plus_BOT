@@ -22,7 +22,7 @@ module.exports = {
                 {
                     name: "__• Pour faire des recherches :__", value:
                         "`!search movie <Nom du titre>`, permet de rechercher un **film** ou un **court-métrage**." +
-                        "`!search serie <Nom du titre>`, permet de rechercher une **série**."
+                        "\n`!search serie <Nom du titre>`, permet de rechercher une **série**."
                 },
                 { name: "__• Pour prendre peur :__", value: "`!total`, permet de connaitre le nombre total de titres disponibles sur Disney+. 🎞️" },
                 {
