@@ -118,6 +118,7 @@ module.exports = function Search(args, HTTPS, TMDB_API_Key, Discord, message, TM
                                     {
                                         name: 'Fonctionnement', value:
                                             "Utilise les réactions 1️⃣ à 5️⃣ pour valider (ou non) ta recherche." +
+                                            "\nUtilise ❎ pour annuler ta recherche." +
                                             "\nTu as **30 secondes** pour le faire sinon ta recherche sera annulée.",
                                         inline: true
                                     },
@@ -133,10 +134,11 @@ module.exports = function Search(args, HTTPS, TMDB_API_Key, Discord, message, TM
                                         .then(() => Movie_Poll_Message.react('2️⃣'))
                                         .then(() => { if (j > 2) Movie_Poll_Message.react('3️⃣') })
                                         .then(() => { if (j > 3) Movie_Poll_Message.react('4️⃣') })
-                                        .then(() => { if (j > 4) Movie_Poll_Message.react('5️⃣') });
+                                        .then(() => { if (j > 4) Movie_Poll_Message.react('5️⃣') })
+                                        .then(() => Movie_Poll_Message.react('❎'));
 
                                     const filter = (reaction, user) => {
-                                        return ['1️⃣', '2️⃣', '3️⃣', '4️⃣', '5️⃣'].includes(reaction.emoji.name) && user.id === message.author.id;
+                                        return ['1️⃣', '2️⃣', '3️⃣', '4️⃣', '5️⃣', '❎'].includes(reaction.emoji.name) && user.id === message.author.id;
                                     };
 
                                     Movie_Poll_Message.awaitReactions(filter, { max: 1, time: 30000, errors: ['time'] })
@@ -167,6 +169,11 @@ module.exports = function Search(args, HTTPS, TMDB_API_Key, Discord, message, TM
                                                 case '5️⃣':
                                                     Movie_Poll_Message.delete();
                                                     Result(4, "Movie");
+                                                    break;
+
+                                                case '❎':
+                                                    Movie_Poll_Message.delete();
+                                                    message.reply("\n❌ Ta recherche a été annulée. ❌");
                                                     break;
 
                                                 default:
@@ -308,6 +315,7 @@ module.exports = function Search(args, HTTPS, TMDB_API_Key, Discord, message, TM
                                     {
                                         name: 'Fonctionnement', value:
                                             "Utilise les réactions 1️⃣ à 5️⃣ pour valider (ou non) ta recherche." +
+                                            "\nUtilise ❎ pour annuler ta recherche." +
                                             "\nTu as **30** secondes pour le faire sinon ta recherche sera annulée.",
                                         inline: true
                                     },
@@ -323,10 +331,11 @@ module.exports = function Search(args, HTTPS, TMDB_API_Key, Discord, message, TM
                                         .then(() => TV_Poll_Message.react('2️⃣'))
                                         .then(() => { if (j > 2) TV_Poll_Message.react('3️⃣') })
                                         .then(() => { if (j > 3) TV_Poll_Message.react('4️⃣') })
-                                        .then(() => { if (j > 4) TV_Poll_Message.react('5️⃣') });
+                                        .then(() => { if (j > 4) TV_Poll_Message.react('5️⃣') })
+                                        .then(() => TV_Poll_Message.react('❎'));
 
                                     const filter = (reaction, user) => {
-                                        return ['1️⃣', '2️⃣', '3️⃣', '4️⃣', '5️⃣'].includes(reaction.emoji.name) && user.id === message.author.id;
+                                        return ['1️⃣', '2️⃣', '3️⃣', '4️⃣', '5️⃣', '❎'].includes(reaction.emoji.name) && user.id === message.author.id;
                                     };
 
                                     TV_Poll_Message.awaitReactions(filter, { max: 1, time: 30000, errors: ['time'] })
@@ -357,6 +366,11 @@ module.exports = function Search(args, HTTPS, TMDB_API_Key, Discord, message, TM
                                                 case '5️⃣':
                                                     TV_Poll_Message.delete();
                                                     Result(4, "TV");
+                                                    break;
+
+                                                case '❎':
+                                                    Movie_Poll_Message.delete();
+                                                    message.reply("\n❌ Ta recherche a été annulée. ❌");
                                                     break;
 
                                                 default:
