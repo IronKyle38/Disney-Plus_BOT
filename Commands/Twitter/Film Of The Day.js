@@ -4,7 +4,7 @@ module.exports = function Film_Of_The_Day(TMDb_List, HTTPS, TMDB_API_Key, Twitte
         Today.getFullYear(),
         Today.getMonth(),
         Today.getDate(),
-        8
+        9
     ));
 
     if (Today.getUTCHours() >= Tweet_Day.getUTCHours()) {
