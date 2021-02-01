@@ -11,7 +11,7 @@ module.exports = function Random_Film(TMDb_List, HTTPS, TMDB_API_Key, Twitter_Cl
         req.on('end', () => {
             data_parse = JSON.parse(data);
 
-            URL = `https://www.disneyplus.com/fr-fr/${TMDb_List.Short[TMDB_Short_Random].URL}`;
+            URL = `https://www.disneyplus.com/${TMDb_List.Short[TMDB_Short_Random].URL}`;
 
             var Note = ""
             if (data_parse.vote_average < 1) {

@@ -42,7 +42,7 @@ module.exports = function Film_Of_The_Day(TMDb_List, HTTPS, TMDB_API_Key, Twitte
                     Overview = twitter(Overview, Character_Counter);
                 };
 
-                URL = `https://www.disneyplus.com/fr-fr/${TMDb_List.Movie[TMDB_Movie_Random].URL}`;
+                URL = `https://www.disneyplus.com/${TMDb_List.Movie[TMDB_Movie_Random].URL}`;
 
                 Reply =
                     "Film du jour" +
