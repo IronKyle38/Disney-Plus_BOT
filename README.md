@@ -12,7 +12,7 @@
                 src="https://img.shields.io/librariesio/github/IronKyle38/Disney-Plus_BOT"
                 alt="Dependencies Status" /></a>
         <a href="https://github.com/IronKyle38/Disney-Plus_BOT/releases/latest"><img
-                src="https://img.shields.io/github/v/release/IronKyle38/Disney-Plus_BOT?include_prereleases"
+                src="https://img.shields.io/github/v/release/IronKyle38/Disney-Plus_BOT"
                 alt="Release" /></a>
         <a href="https://github.com/IronKyle38/Disney-Plus_BOT"><img
                 src="https://img.shields.io/github/languages/code-size/IronKyle38/Disney-Plus_BOT"
