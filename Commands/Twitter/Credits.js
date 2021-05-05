@@ -1,7 +1,7 @@
 module.exports = function Credits(Package, Tweet, Twitter_Client) {
     Reply =
         "@" + Tweet.user.screen_name +
-        "\nDonnées : @ChroniqueDisney" +
+        "\nDonnées : @ChroniqueDisney, @DisneyPlusFR et @themoviedb" +
         "\n" +
         "\Version : " + Package.version +
         "\n" +
