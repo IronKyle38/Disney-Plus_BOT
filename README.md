@@ -92,7 +92,7 @@ This BOT is not affiliated with Disney+.
 
 All trademarks referenced herein are the properties of their respective owners.
 
-©2020 The Walt Disney Company. All rights reserved. 
+©2021 The Walt Disney Company. All rights reserved. 
 
 ## Licence
 [Licence](LICENSE)

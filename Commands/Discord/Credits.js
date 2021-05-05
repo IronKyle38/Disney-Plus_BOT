@@ -17,7 +17,7 @@ module.exports = {
                     name: "Droits d'auteur", value:
                         "This BOT is not affiliated with Disney+.\n" +
                         "All trademarks referenced herein are the properties of their respective owners.\n" +
-                        "©2020 The Walt Disney Company. All rights reserved."
+                        "©2021 The Walt Disney Company. All rights reserved."
                 }
             )
             .setImage('https://repository-images.githubusercontent.com/257262775/14c3e980-9e74-11ea-8ad6-52c35c8e9ca0')
