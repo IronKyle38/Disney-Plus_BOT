@@ -432,7 +432,7 @@ module.exports = function Search(args, HTTPS, TMDB_API_Key, Discord, message, TM
                 .setURL(`https://www.disneyplus.com/${TEST[0].URL}`)
                 .setDescription(
                     `**[${Title}](https://www.themoviedb.org/${Type.toLowerCase()}/${data_parse.results[x].id})** est disponible sur Disney+ depuis le **${TEST[0].Date}** !` +
-                    "\nBon visionage ! 🍿"
+                    "\nBon visionnage ! 🍿"
                 )
                 .setThumbnail(`https://image.tmdb.org/t/p/original${data_parse.results[x].poster_path}`)
                 .setImage(`https://image.tmdb.org/t/p/original${data_parse.results[x].backdrop_path}`)
