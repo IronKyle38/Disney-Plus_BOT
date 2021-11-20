@@ -4,8 +4,8 @@ module.exports = function Film_Of_The_Day(TMDb_List, HTTPS, TMDB_API_Key, Twitte
         Today.getFullYear(),
         Today.getMonth(),
         Today.getDate(),
-        // 9 // Heure d'hiver
-        8 // Heure d'été
+        9 // Heure d'hiver
+        // 8 // Heure d'été
     ));
 
     if (Today.getUTCHours() >= Tweet_Day.getUTCHours()) {
