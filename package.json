@@ -26,7 +26,7 @@
   },
   "homepage": "https://github.com/IronKyle38/Disney-Plus_BOT#readme",
   "dependencies": {
-    "discord.js": "12.5.3",
+    "discord.js": "13.4.0",
     "twitter-lite": "1.1.0"
   }
 }
