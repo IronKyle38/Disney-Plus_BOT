@@ -1,11 +1,18 @@
 module.exports = function Film_Of_The_Day(TMDb_List, HTTPS, TMDB_API_Key, Twitter_Client) {
     var Today = new Date();
+
+    if (Today.getTimezoneOffset() == -60) {
+        Hour = 9; // Winter time
+    }
+    else {
+        Hour = 8; // Summer time
+    };
+
     var Tweet_Day = new Date(Date.UTC(
         Today.getFullYear(),
         Today.getMonth(),
         Today.getDate(),
-        9 // Heure d'hiver
-        // 8 // Heure d'été
+        Hour
     ));
 
     if (Today.getUTCHours() >= Tweet_Day.getUTCHours()) {
