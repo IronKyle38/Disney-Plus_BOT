@@ -23,7 +23,7 @@ module.exports = {
                     "\nMerci de vérifier tes paramètres de confidentialités afin d'autoriser les messages privés en provenance des membres du serveur. ✉️"
                 )
                     .catch((error) => {
-                        console.log(`○ ${error.name} : ${error.message}`);
+                        console.log(`❌ ${error.name} : ${error.message}`);
                     });
             });
     }

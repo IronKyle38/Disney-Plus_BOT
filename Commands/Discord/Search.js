@@ -17,13 +17,13 @@ module.exports = function Search(args, HTTPS, TMDB_API_Key, Discord, message, TM
 
                     switch (data_parse.total_results) {
                         case 0:
-                            console.log(`• Search command use ("${args}") (0 movie found) (via Discord).`);
+                            console.log(`✅ Search command use ("${args}") (0 movie found) (via Discord).`);
                             message.reply(
                                 "\n⚠️ Aucun titre n'a été trouvé. ⚠️" +
                                 "\nVérifie qu'il n'y a pas de fautes d'orthographes ou réessaie en tapant le titre en anglais ou dans une autre langue."
                             )
                                 .catch((error) => {
-                                    console.log(`○ ${error.name} : ${error.message}`);
+                                    console.log(`❌ ${error.name} : ${error.message}`);
                                 });
                             break;
 
@@ -54,10 +54,10 @@ module.exports = function Search(args, HTTPS, TMDB_API_Key, Discord, message, TM
                                 )
                                 .setThumbnail(`https://image.tmdb.org/t/p/original${data_parse.results[0].poster_path}`)
                                 .setFooter("Disney+ BOT uses the TMDb API but is not endorsed or certified by TMDb.", "https://i.imgur.com/tpO60XS.png");
-                            console.log(`• Search command use ("${args}") (1 movie found) (via Discord).`);
+                            console.log(`✅ Search command use ("${args}") (1 movie found) (via Discord).`);
                             message.channel.send(Movie_Result_Embed)
                                 .catch((error) => {
-                                    console.log(`○ ${error.name} : ${error.message}`);
+                                    console.log(`❌ ${error.name} : ${error.message}`);
                                 })
                                 .then(Movie_Poll_Message => {
                                     Movie_Poll_Message.react('✅').then(() => Movie_Poll_Message.react('❎'));
@@ -80,7 +80,7 @@ module.exports = function Search(args, HTTPS, TMDB_API_Key, Discord, message, TM
                                                     "\nVérifie qu'il n'y a pas de fautes d'orthographes ou réessaie en tapant le titre en anglais ou dans une autre langue."
                                                 )
                                                     .catch((error) => {
-                                                        console.log(`○ ${error.name} : ${error.message}`);
+                                                        console.log(`❌ ${error.name} : ${error.message}`);
                                                     });
                                             };
                                         })
@@ -124,10 +124,10 @@ module.exports = function Search(args, HTTPS, TMDB_API_Key, Discord, message, TM
                                     },
                                 )
                                 .setFooter("Disney+ BOT uses the TMDb API but is not endorsed or certified by TMDb.", "https://i.imgur.com/tpO60XS.png");
-                            console.log(`• Search command use ("${args}") (${data_parse.total_results} movie found) (via Discord).`);
+                            console.log(`✅ Search command use ("${args}") (${data_parse.total_results} movie found) (via Discord).`);
                             message.channel.send(Movie_Results_Embed)
                                 .catch((error) => {
-                                    console.log(`○ ${error.name} : ${error.message}`);
+                                    console.log(`❌ ${error.name} : ${error.message}`);
                                 })
                                 .then(Movie_Poll_Message => {
                                     Movie_Poll_Message.react('1️⃣')
@@ -183,7 +183,7 @@ module.exports = function Search(args, HTTPS, TMDB_API_Key, Discord, message, TM
                                                         "\nVérifie qu'il n'y a pas de fautes d'orthographes ou réessaie en tapant le titre en anglais ou dans une autre langue."
                                                     )
                                                         .catch((error) => {
-                                                            console.log(`○ ${error.name} : ${error.message}`);
+                                                            console.log(`❌ ${error.name} : ${error.message}`);
                                                         });
                                                     break;
                                             };
@@ -214,13 +214,13 @@ module.exports = function Search(args, HTTPS, TMDB_API_Key, Discord, message, TM
 
                     switch (data_parse.total_results) {
                         case 0:
-                            console.log(`• Search command use ("${args}") (0 serie found) (via Discord).`);
+                            console.log(`✅ Search command use ("${args}") (0 serie found) (via Discord).`);
                             message.reply(
                                 "\n⚠️ Aucun titre n'a été trouvé. ⚠️" +
                                 "\nVérifie qu'il n'y a pas de fautes d'orthographes ou réessaie en tapant le titre en anglais ou dans une autre langue."
                             )
                                 .catch((error) => {
-                                    console.log(`○ ${error.name} : ${error.message}`);
+                                    console.log(`❌ ${error.name} : ${error.message}`);
                                 });
                             break;
 
@@ -251,10 +251,10 @@ module.exports = function Search(args, HTTPS, TMDB_API_Key, Discord, message, TM
                                 )
                                 .setThumbnail(`https://image.tmdb.org/t/p/original${data_parse.results[0].poster_path}`)
                                 .setFooter("Disney+ BOT uses the TMDb API but is not endorsed or certified by TMDb.", "https://i.imgur.com/tpO60XS.png");
-                            console.log(`• Search command use ("${args}") (1 serie found) (via Discord).`);
+                            console.log(`✅ Search command use ("${args}") (1 serie found) (via Discord).`);
                             message.channel.send(TV_Result_Embed)
                                 .catch((error) => {
-                                    console.log(`○ ${error.name} : ${error.message}`);
+                                    console.log(`❌ ${error.name} : ${error.message}`);
                                 })
                                 .then(TV_Poll_Message => {
                                     TV_Poll_Message.react('✅').then(() => TV_Poll_Message.react('❎'));
@@ -277,7 +277,7 @@ module.exports = function Search(args, HTTPS, TMDB_API_Key, Discord, message, TM
                                                     "\nVérifie qu'il n'y a pas de fautes d'orthographes ou réessaie en tapant le titre en anglais ou dans une autre langue."
                                                 )
                                                     .catch((error) => {
-                                                        console.log(`○ ${error.name} : ${error.message}`);
+                                                        console.log(`❌ ${error.name} : ${error.message}`);
                                                     });
                                             };
                                         })
@@ -321,10 +321,10 @@ module.exports = function Search(args, HTTPS, TMDB_API_Key, Discord, message, TM
                                     },
                                 )
                                 .setFooter("Disney+ BOT uses the TMDb API but is not endorsed or certified by TMDb.", "https://i.imgur.com/tpO60XS.png");
-                            console.log(`• Search command use ("${args}") (${data_parse.total_results} serie found) (via Discord).`);
+                            console.log(`✅ Search command use ("${args}") (${data_parse.total_results} serie found) (via Discord).`);
                             message.channel.send(TV_Results_Embed)
                                 .catch((error) => {
-                                    console.log(`○ ${error.name} : ${error.message}`);
+                                    console.log(`❌ ${error.name} : ${error.message}`);
                                 })
                                 .then(TV_Poll_Message => {
                                     TV_Poll_Message.react('1️⃣')
@@ -380,7 +380,7 @@ module.exports = function Search(args, HTTPS, TMDB_API_Key, Discord, message, TM
                                                         "\nVérifie qu'il n'y a pas de fautes d'orthographes ou réessaie en tapant le titre en anglais ou dans une autre langue."
                                                     )
                                                         .catch((error) => {
-                                                            console.log(`○ ${error.name} : ${error.message}`);
+                                                            console.log(`❌ ${error.name} : ${error.message}`);
                                                         });
                                                     break;
                                             };
@@ -404,7 +404,7 @@ module.exports = function Search(args, HTTPS, TMDB_API_Key, Discord, message, TM
                 "\nUtilise ``!search serie <Nom du titre>`` pour rechercher une série."
             )
                 .catch((error) => {
-                    console.log(`○ ${error.name} : ${error.message}`);
+                    console.log(`❌ ${error.name} : ${error.message}`);
                 });
             break;
     };
@@ -437,10 +437,10 @@ module.exports = function Search(args, HTTPS, TMDB_API_Key, Discord, message, TM
                 .setThumbnail(`https://image.tmdb.org/t/p/original${data_parse.results[x].poster_path}`)
                 .setImage(`https://image.tmdb.org/t/p/original${data_parse.results[x].backdrop_path}`)
                 .setFooter("Disney+ BOT uses the TMDb API but is not endorsed or certified by TMDb.", "https://i.imgur.com/tpO60XS.png");
-            console.log(`• Search command use (${Type} available on Disney+) (via Discord).`);
+            console.log(`✅ Search command use (${Type} available on Disney+) (via Discord).`);
             message.channel.send(Search_Embed)
                 .catch((error) => {
-                    console.log(`○ ${error.name} : ${error.message}`);
+                    console.log(`❌ ${error.name} : ${error.message}`);
                 });
 
         } else {
@@ -452,10 +452,10 @@ module.exports = function Search(args, HTTPS, TMDB_API_Key, Discord, message, TM
                 )
                 .setImage(`https://i.giphy.com/media/JER2en0ZRiGUE/source.gif`)
                 .setFooter("Disney+ BOT uses the TMDb API but is not endorsed or certified by TMDb.", "https://i.imgur.com/tpO60XS.png");
-            console.log(`• Search command use (${Type} not available on Disney+) (via Discord).`);
+            console.log(`✅ Search command use (${Type} not available on Disney+) (via Discord).`);
             message.channel.send(Search_Embed)
                 .catch((error) => {
-                    console.log(`○ ${error.name} : ${error.message}`);
+                    console.log(`❌ ${error.name} : ${error.message}`);
                 });
         };
     };

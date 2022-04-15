@@ -9,9 +9,9 @@ module.exports = function Bug(Tweet, Twitter_Client) {
 
     DM_URL = "https://twitter.com/messages/compose?recipient_id=1264823416978386944";
 
-    console.log("• Command bug use (via Twitter).");
+    console.log("✅ Command bug use (via Twitter).");
     Twitter_Client.post('statuses/update', { status: Reply, in_reply_to_status_id: Tweet.id_str, attachment_url: DM_URL })
         .catch((e) => {
-            console.log(`○ ${e.errors[0].code} : ${e.errors[0].message}`);
+            console.log(`❌ ${e.errors[0].code} : ${e.errors[0].message}`);
         });
 };

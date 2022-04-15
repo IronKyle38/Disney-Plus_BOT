@@ -61,10 +61,10 @@ module.exports = function Total(HTTPS, TMDb_Movie_List_ID, TMDB_API_Key, TMDb_TV
                                 "\nRecettes des films :" +
                                 "\n$" + Revenue + " 💸";
 
-                            console.log("• Command total use (via Twitter).");
+                            console.log("✅ Command total use (via Twitter).");
                             Twitter_Client.post('statuses/update', { status: Reply, in_reply_to_status_id: Tweet.id_str })
                                 .catch((e) => {
-                                    console.log(`○ ${e.errors[0].code} : ${e.errors[0].message}`);
+                                    console.log(`❌ ${e.errors[0].code} : ${e.errors[0].message}`);
                                 });
                         });
                     });

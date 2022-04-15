@@ -25,7 +25,7 @@ module.exports = {
         console.log("• Command !credits use (via Discord).");
         message.channel.send(Credits_Embed)
             .catch((error) => {
-                console.log(`○ ${error.name} : ${error.message}`);
+                console.log(`❌ ${error.name} : ${error.message}`);
             });
     }
 };

@@ -9,7 +9,7 @@ module.exports = {
             "\nToutes les commandes disponibles sont accessibles en tapant `!info`."
         )
             .catch((error) => {
-                console.log(`○ ${error.name} : ${error.message}`);
+                console.log(`❌ ${error.name} : ${error.message}`);
             });
     }
 };

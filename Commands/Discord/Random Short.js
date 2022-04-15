@@ -103,7 +103,7 @@ module.exports = {
                 console.log("• Command !random short use (via Discord).");
                 message.channel.send(Short_Embed)
                     .catch((error) => {
-                        console.log(`○ ${error.name} : ${error.message}`);
+                        console.log(`❌ ${error.name} : ${error.message}`);
                     });
             });
         });

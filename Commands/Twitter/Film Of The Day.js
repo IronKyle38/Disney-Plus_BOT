@@ -19,7 +19,7 @@ module.exports = function Film_Of_The_Day(TMDb_List, HTTPS, TMDB_API_Key, Twitte
         Tweet_Day.setDate(Today.getDate() + 1);
     };
 
-    console.log("• Film of the day planned for: " + Tweet_Day);
+    console.log("✅ Film of the day planned for: " + Tweet_Day);
 
     var ms_To_Tweet_Day = Tweet_Day.getTime() - Today.getTime();
 
@@ -59,10 +59,10 @@ module.exports = function Film_Of_The_Day(TMDb_List, HTTPS, TMDB_API_Key, Twitte
                     "\n" + Overview +
                     "\n" + URL;
 
-                console.log("• Tweet Film of the day send (via Twitter).");
+                console.log("✅ Tweet Film of the day send (via Twitter).");
                 Twitter_Client.post('statuses/update', { status: Reply })
                     .catch((e) => {
-                        console.log(`○ ${e.errors[0].code} : ${e.errors[0].message}`);
+                        console.log(`❌ ${e.errors[0].code} : ${e.errors[0].message}`);
                     });
 
                 Film_Of_The_Day(TMDb_List, HTTPS, TMDB_API_Key, Twitter_Client);

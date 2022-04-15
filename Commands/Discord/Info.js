@@ -36,7 +36,7 @@ module.exports = {
         console.log("• Command !info use (via Discord).");
         message.channel.send(Info_Embed)
             .catch((error) => {
-                console.log(`○ ${error.name} : ${error.message}`);
+                console.log(`❌ ${error.name} : ${error.message}`);
             });
     }
 };

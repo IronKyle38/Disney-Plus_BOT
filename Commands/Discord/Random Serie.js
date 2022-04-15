@@ -112,7 +112,7 @@ module.exports = {
                 console.log("• Command !random serie use (via Discord).");
                 message.channel.send(Movie_Embed)
                     .catch((error) => {
-                        console.log(`○ ${error.name} : ${error.message}`);
+                        console.log(`❌ ${error.name} : ${error.message}`);
                     });
             });
         });

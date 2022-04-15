@@ -23,10 +23,10 @@ module.exports = function Random_Film(TMDb_List, HTTPS, TMDB_API_Key, Twitter_Cl
 
             Reply = `@${Tweet.user.screen_name}▶ ${data_parse.title} ◀\n\nNote (${data_parse.vote_count} notes)\n${Note}\n${URL}`;
 
-            console.log("• Command random short use (via Twitter).");
+            console.log("✅ Command random short use (via Twitter).");
             Twitter_Client.post('statuses/update', { status: Reply, in_reply_to_status_id: Tweet.id_str })
                 .catch((e) => {
-                    console.log(`○ ${e.errors[0].code} : ${e.errors[0].message}`);
+                    console.log(`❌ ${e.errors[0].code} : ${e.errors[0].message}`);
                 });
         });
     });
