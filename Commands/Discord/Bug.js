@@ -17,7 +17,7 @@ module.exports = {
         console.log("• Command !bug use (via Discord).");
         message.author.send(BUG_Embed)
             .catch(() => {
-                console.log("○ Can't send private message to user.");
+                console.log("ℹ️ Can't send private message to user.");
                 message.reply(
                     "je ne peux pas t'envoyer de messages privés. 😢" +
                     "\nMerci de vérifier tes paramètres de confidentialités afin d'autoriser les messages privés en provenance des membres du serveur. ✉️"

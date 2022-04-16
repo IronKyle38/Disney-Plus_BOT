@@ -27,7 +27,7 @@ module.exports = function Film_Of_The_Day(TMDb_List, HTTPS, TMDB_API_Key, Twitte
         do {
             TMDB_Movie_Random = Math.floor(Math.random() * TMDb_List.Movie.length);
             if (TMDb_List.Movie[TMDB_Movie_Random].Film_Of_The_Day == true) {
-                console.log("○ The film has already been chosen for The Film Of The Day tweet.");
+                console.log("ℹ️ The film has already been chosen for The Film Of The Day tweet.");
             };
         } while (TMDb_List.Movie[TMDB_Movie_Random].Film_Of_The_Day == true);
 
